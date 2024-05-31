@@ -3,8 +3,7 @@ sv xil_defaultlib  \
 "../../../../Sobel_filter.srcs/sources_1/new/compute_sobel.sv" \
 "../../../../Sobel_filter.srcs/sources_1/new/shift.sv" \
 "../../../../Sobel_filter.srcs/sources_1/new/sobel_operator.sv" \
-"../../../../Sobel_filter.srcs/sources_1/new/sobel_operator_gx.sv" \
-"../../../../Sobel_filter.srcs/sources_1/new/sobel_operator_gy.sv" \
+"../../../../Sobel_filter.srcs/sources_1/new/top.sv" \
 "../../../../Sobel_filter.srcs/sim_1/new/sobel_operator_tb.sv" \
 
 # compile glbl module

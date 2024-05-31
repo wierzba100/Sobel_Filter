@@ -1,11 +1,11 @@
 // Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
-// Date        : Fri May 31 03:20:00 2024
+// Date        : Fri May 31 06:02:57 2024
 // Host        : DESKTOP-TCOPK8L running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.sim/sim_1/synth/func/xsim/sobel_operator_tb_func_synth.v
-// Design      : sobel_operator
+// Design      : top
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xck26-sfvc784-2LV-c
@@ -155,10 +155,10 @@ module compute_sobel
         .PATTERNDETECT(NLW_pxl_out1_PATTERNDETECT_UNCONNECTED),
         .PCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .PCOUT(NLW_pxl_out1_PCOUT_UNCONNECTED[47:0]),
-        .RSTA(reset_IBUF),
+        .RSTA(1'b0),
         .RSTALLCARRYIN(1'b0),
         .RSTALUMODE(1'b0),
-        .RSTB(reset_IBUF),
+        .RSTB(1'b0),
         .RSTC(1'b0),
         .RSTCTRL(1'b0),
         .RSTD(1'b0),
@@ -2283,8 +2283,304 @@ module shift
         .R(SR));
 endmodule
 
-(* NotValidForBitStream *)
 module sobel_operator
+   (O,
+    CO,
+    \pxl_10_out_reg[7] ,
+    \pxl_22_out_reg[7] ,
+    Gx0,
+    \pxl_00_out_reg[1] ,
+    \pxl_01_out_reg[7] ,
+    \pxl_01_out_reg[7]_0 ,
+    \pxl_20_out_reg[6] ,
+    \pxl_22_out_reg[7]_0 ,
+    Gy0,
+    DI,
+    S,
+    Q,
+    Gx0__29_carry__0_i_5,
+    pxl_out2,
+    pxl_out2_0,
+    pxl_out2_1,
+    pxl_out2_2,
+    pxl_out2_3,
+    pxl_out2_4,
+    pxl_out2_5,
+    pxl_out2_6,
+    Gy0__29_carry_i_15,
+    Gy0__29_carry_i_15_0,
+    Gy0__29_carry__0_i_5,
+    Gy0__29_carry__0_i_5_0,
+    pxl_out1,
+    pxl_out1_0,
+    pxl_out1_1,
+    pxl_out1_2,
+    pxl_out1_3,
+    pxl_out1_4,
+    pxl_out1_5,
+    pxl_out1_6);
+  output [7:0]O;
+  output [0:0]CO;
+  output [0:0]\pxl_10_out_reg[7] ;
+  output [9:0]\pxl_22_out_reg[7] ;
+  output [10:0]Gx0;
+  output [7:0]\pxl_00_out_reg[1] ;
+  output [0:0]\pxl_01_out_reg[7] ;
+  output [0:0]\pxl_01_out_reg[7]_0 ;
+  output [6:0]\pxl_20_out_reg[6] ;
+  output [2:0]\pxl_22_out_reg[7]_0 ;
+  output [10:0]Gy0;
+  input [7:0]DI;
+  input [7:0]S;
+  input [0:0]Q;
+  input [0:0]Gx0__29_carry__0_i_5;
+  input [6:0]pxl_out2;
+  input [7:0]pxl_out2_0;
+  input [1:0]pxl_out2_1;
+  input [2:0]pxl_out2_2;
+  input [0:0]pxl_out2_3;
+  input [6:0]pxl_out2_4;
+  input [0:0]pxl_out2_5;
+  input [2:0]pxl_out2_6;
+  input [5:0]Gy0__29_carry_i_15;
+  input [7:0]Gy0__29_carry_i_15_0;
+  input [0:0]Gy0__29_carry__0_i_5;
+  input [0:0]Gy0__29_carry__0_i_5_0;
+  input [6:0]pxl_out1;
+  input [7:0]pxl_out1_0;
+  input [1:0]pxl_out1_1;
+  input [2:0]pxl_out1_2;
+  input [0:0]pxl_out1_3;
+  input [6:0]pxl_out1_4;
+  input [0:0]pxl_out1_5;
+  input [2:0]pxl_out1_6;
+
+  wire [0:0]CO;
+  wire [7:0]DI;
+  wire [10:0]Gx0;
+  wire Gx0__1_carry_n_0;
+  wire Gx0__1_carry_n_1;
+  wire Gx0__1_carry_n_2;
+  wire Gx0__1_carry_n_3;
+  wire Gx0__1_carry_n_4;
+  wire Gx0__1_carry_n_5;
+  wire Gx0__1_carry_n_6;
+  wire Gx0__1_carry_n_7;
+  wire [0:0]Gx0__29_carry__0_i_5;
+  wire Gx0__29_carry__0_n_6;
+  wire Gx0__29_carry__0_n_7;
+  wire Gx0__29_carry_n_0;
+  wire Gx0__29_carry_n_1;
+  wire Gx0__29_carry_n_2;
+  wire Gx0__29_carry_n_3;
+  wire Gx0__29_carry_n_4;
+  wire Gx0__29_carry_n_5;
+  wire Gx0__29_carry_n_6;
+  wire Gx0__29_carry_n_7;
+  wire Gx0__59_carry__0_n_6;
+  wire Gx0__59_carry__0_n_7;
+  wire Gx0__59_carry_n_0;
+  wire Gx0__59_carry_n_1;
+  wire Gx0__59_carry_n_2;
+  wire Gx0__59_carry_n_3;
+  wire Gx0__59_carry_n_4;
+  wire Gx0__59_carry_n_5;
+  wire Gx0__59_carry_n_6;
+  wire Gx0__59_carry_n_7;
+  wire [10:0]Gy0;
+  wire Gy0__1_carry_n_0;
+  wire Gy0__1_carry_n_1;
+  wire Gy0__1_carry_n_2;
+  wire Gy0__1_carry_n_3;
+  wire Gy0__1_carry_n_4;
+  wire Gy0__1_carry_n_5;
+  wire Gy0__1_carry_n_6;
+  wire Gy0__1_carry_n_7;
+  wire [0:0]Gy0__29_carry__0_i_5;
+  wire [0:0]Gy0__29_carry__0_i_5_0;
+  wire Gy0__29_carry__0_n_6;
+  wire Gy0__29_carry__0_n_7;
+  wire [5:0]Gy0__29_carry_i_15;
+  wire [7:0]Gy0__29_carry_i_15_0;
+  wire Gy0__29_carry_n_0;
+  wire Gy0__29_carry_n_1;
+  wire Gy0__29_carry_n_15;
+  wire Gy0__29_carry_n_2;
+  wire Gy0__29_carry_n_3;
+  wire Gy0__29_carry_n_4;
+  wire Gy0__29_carry_n_5;
+  wire Gy0__29_carry_n_6;
+  wire Gy0__29_carry_n_7;
+  wire Gy0__59_carry__0_n_6;
+  wire Gy0__59_carry__0_n_7;
+  wire Gy0__59_carry_n_0;
+  wire Gy0__59_carry_n_1;
+  wire Gy0__59_carry_n_2;
+  wire Gy0__59_carry_n_3;
+  wire Gy0__59_carry_n_4;
+  wire Gy0__59_carry_n_5;
+  wire Gy0__59_carry_n_6;
+  wire Gy0__59_carry_n_7;
+  wire [7:0]O;
+  wire [0:0]PCOUT;
+  wire [0:0]Q;
+  wire [7:0]S;
+  wire [7:0]\pxl_00_out_reg[1] ;
+  wire [0:0]\pxl_01_out_reg[7] ;
+  wire [0:0]\pxl_01_out_reg[7]_0 ;
+  wire [0:0]\pxl_10_out_reg[7] ;
+  wire [6:0]\pxl_20_out_reg[6] ;
+  wire [9:0]\pxl_22_out_reg[7] ;
+  wire [2:0]\pxl_22_out_reg[7]_0 ;
+  wire [6:0]pxl_out1;
+  wire [7:0]pxl_out1_0;
+  wire [1:0]pxl_out1_1;
+  wire [2:0]pxl_out1_2;
+  wire [0:0]pxl_out1_3;
+  wire [6:0]pxl_out1_4;
+  wire [0:0]pxl_out1_5;
+  wire [2:0]pxl_out1_6;
+  wire [6:0]pxl_out2;
+  wire [7:0]pxl_out2_0;
+  wire [1:0]pxl_out2_1;
+  wire [2:0]pxl_out2_2;
+  wire [0:0]pxl_out2_3;
+  wire [6:0]pxl_out2_4;
+  wire [0:0]pxl_out2_5;
+  wire [2:0]pxl_out2_6;
+  wire [7:0]NLW_Gx0__1_carry__0_CO_UNCONNECTED;
+  wire [7:1]NLW_Gx0__1_carry__0_O_UNCONNECTED;
+  wire [7:2]NLW_Gx0__29_carry__0_CO_UNCONNECTED;
+  wire [7:3]NLW_Gx0__29_carry__0_O_UNCONNECTED;
+  wire [7:2]NLW_Gx0__59_carry__0_CO_UNCONNECTED;
+  wire [7:3]NLW_Gx0__59_carry__0_O_UNCONNECTED;
+  wire [7:0]NLW_Gy0__1_carry__0_CO_UNCONNECTED;
+  wire [7:1]NLW_Gy0__1_carry__0_O_UNCONNECTED;
+  wire [7:2]NLW_Gy0__29_carry__0_CO_UNCONNECTED;
+  wire [7:3]NLW_Gy0__29_carry__0_O_UNCONNECTED;
+  wire [7:2]NLW_Gy0__59_carry__0_CO_UNCONNECTED;
+  wire [7:3]NLW_Gy0__59_carry__0_O_UNCONNECTED;
+
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gx0__1_carry
+       (.CI(1'b0),
+        .CI_TOP(1'b0),
+        .CO({Gx0__1_carry_n_0,Gx0__1_carry_n_1,Gx0__1_carry_n_2,Gx0__1_carry_n_3,Gx0__1_carry_n_4,Gx0__1_carry_n_5,Gx0__1_carry_n_6,Gx0__1_carry_n_7}),
+        .DI(DI),
+        .O(O),
+        .S(S));
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gx0__1_carry__0
+       (.CI(Gx0__1_carry_n_0),
+        .CI_TOP(1'b0),
+        .CO({NLW_Gx0__1_carry__0_CO_UNCONNECTED[7:2],CO,NLW_Gx0__1_carry__0_CO_UNCONNECTED[0]}),
+        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,Q}),
+        .O({NLW_Gx0__1_carry__0_O_UNCONNECTED[7:1],\pxl_10_out_reg[7] }),
+        .S({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,Gx0__29_carry__0_i_5}));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gx0__29_carry
+       (.CI(1'b0),
+        .CI_TOP(1'b0),
+        .CO({Gx0__29_carry_n_0,Gx0__29_carry_n_1,Gx0__29_carry_n_2,Gx0__29_carry_n_3,Gx0__29_carry_n_4,Gx0__29_carry_n_5,Gx0__29_carry_n_6,Gx0__29_carry_n_7}),
+        .DI({pxl_out2,1'b0}),
+        .O({\pxl_22_out_reg[7] [6:0],PCOUT}),
+        .S(pxl_out2_0));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gx0__29_carry__0
+       (.CI(Gx0__29_carry_n_0),
+        .CI_TOP(1'b0),
+        .CO({NLW_Gx0__29_carry__0_CO_UNCONNECTED[7:2],Gx0__29_carry__0_n_6,Gx0__29_carry__0_n_7}),
+        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out2_1}),
+        .O({NLW_Gx0__29_carry__0_O_UNCONNECTED[7:3],\pxl_22_out_reg[7] [9:7]}),
+        .S({1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out2_2}));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gx0__59_carry
+       (.CI(1'b0),
+        .CI_TOP(1'b0),
+        .CO({Gx0__59_carry_n_0,Gx0__59_carry_n_1,Gx0__59_carry_n_2,Gx0__59_carry_n_3,Gx0__59_carry_n_4,Gx0__59_carry_n_5,Gx0__59_carry_n_6,Gx0__59_carry_n_7}),
+        .DI({\pxl_22_out_reg[7] [6:1],pxl_out2_3,1'b0}),
+        .O(Gx0[7:0]),
+        .S({pxl_out2_4,PCOUT}));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gx0__59_carry__0
+       (.CI(Gx0__59_carry_n_0),
+        .CI_TOP(1'b0),
+        .CO({NLW_Gx0__59_carry__0_CO_UNCONNECTED[7:2],Gx0__59_carry__0_n_6,Gx0__59_carry__0_n_7}),
+        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out2_5,\pxl_22_out_reg[7] [7]}),
+        .O({NLW_Gx0__59_carry__0_O_UNCONNECTED[7:3],Gx0[10:8]}),
+        .S({1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out2_6}));
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gy0__1_carry
+       (.CI(1'b0),
+        .CI_TOP(1'b0),
+        .CO({Gy0__1_carry_n_0,Gy0__1_carry_n_1,Gy0__1_carry_n_2,Gy0__1_carry_n_3,Gy0__1_carry_n_4,Gy0__1_carry_n_5,Gy0__1_carry_n_6,Gy0__1_carry_n_7}),
+        .DI({Gy0__29_carry_i_15,DI[1:0]}),
+        .O(\pxl_00_out_reg[1] ),
+        .S(Gy0__29_carry_i_15_0));
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gy0__1_carry__0
+       (.CI(Gy0__1_carry_n_0),
+        .CI_TOP(1'b0),
+        .CO({NLW_Gy0__1_carry__0_CO_UNCONNECTED[7:2],\pxl_01_out_reg[7] ,NLW_Gy0__1_carry__0_CO_UNCONNECTED[0]}),
+        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,Gy0__29_carry__0_i_5}),
+        .O({NLW_Gy0__1_carry__0_O_UNCONNECTED[7:1],\pxl_01_out_reg[7]_0 }),
+        .S({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,Gy0__29_carry__0_i_5_0}));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gy0__29_carry
+       (.CI(1'b0),
+        .CI_TOP(1'b0),
+        .CO({Gy0__29_carry_n_0,Gy0__29_carry_n_1,Gy0__29_carry_n_2,Gy0__29_carry_n_3,Gy0__29_carry_n_4,Gy0__29_carry_n_5,Gy0__29_carry_n_6,Gy0__29_carry_n_7}),
+        .DI({pxl_out1,1'b0}),
+        .O({\pxl_20_out_reg[6] ,Gy0__29_carry_n_15}),
+        .S(pxl_out1_0));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gy0__29_carry__0
+       (.CI(Gy0__29_carry_n_0),
+        .CI_TOP(1'b0),
+        .CO({NLW_Gy0__29_carry__0_CO_UNCONNECTED[7:2],Gy0__29_carry__0_n_6,Gy0__29_carry__0_n_7}),
+        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out1_1}),
+        .O({NLW_Gy0__29_carry__0_O_UNCONNECTED[7:3],\pxl_22_out_reg[7]_0 }),
+        .S({1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out1_2}));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gy0__59_carry
+       (.CI(1'b0),
+        .CI_TOP(1'b0),
+        .CO({Gy0__59_carry_n_0,Gy0__59_carry_n_1,Gy0__59_carry_n_2,Gy0__59_carry_n_3,Gy0__59_carry_n_4,Gy0__59_carry_n_5,Gy0__59_carry_n_6,Gy0__59_carry_n_7}),
+        .DI({\pxl_20_out_reg[6] [6:1],pxl_out1_3,1'b0}),
+        .O(Gy0[7:0]),
+        .S({pxl_out1_4,Gy0__29_carry_n_15}));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 #(
+    .CARRY_TYPE("SINGLE_CY8")) 
+    Gy0__59_carry__0
+       (.CI(Gy0__59_carry_n_0),
+        .CI_TOP(1'b0),
+        .CO({NLW_Gy0__59_carry__0_CO_UNCONNECTED[7:2],Gy0__59_carry__0_n_6,Gy0__59_carry__0_n_7}),
+        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out1_5,\pxl_22_out_reg[7]_0 [0]}),
+        .O({NLW_Gy0__59_carry__0_O_UNCONNECTED[7:3],Gy0[10:8]}),
+        .S({1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out1_6}));
+endmodule
+
+(* NotValidForBitStream *)
+module top
    (clk,
     reset,
     pxl_00_in,
@@ -2412,36 +2708,36 @@ module sobel_operator
   wire u_shift_n_96;
   wire u_shift_n_97;
   wire u_shift_n_98;
-  wire u_sobel_operator_gx_n_0;
-  wire u_sobel_operator_gx_n_1;
-  wire u_sobel_operator_gx_n_2;
-  wire u_sobel_operator_gx_n_3;
-  wire u_sobel_operator_gx_n_4;
-  wire u_sobel_operator_gx_n_5;
-  wire u_sobel_operator_gx_n_6;
-  wire u_sobel_operator_gx_n_7;
-  wire u_sobel_operator_gx_n_8;
-  wire u_sobel_operator_gx_n_9;
-  wire u_sobel_operator_gy_n_0;
-  wire u_sobel_operator_gy_n_1;
-  wire u_sobel_operator_gy_n_10;
-  wire u_sobel_operator_gy_n_11;
-  wire u_sobel_operator_gy_n_12;
-  wire u_sobel_operator_gy_n_13;
-  wire u_sobel_operator_gy_n_14;
-  wire u_sobel_operator_gy_n_15;
-  wire u_sobel_operator_gy_n_16;
-  wire u_sobel_operator_gy_n_17;
-  wire u_sobel_operator_gy_n_18;
-  wire u_sobel_operator_gy_n_19;
-  wire u_sobel_operator_gy_n_2;
-  wire u_sobel_operator_gy_n_3;
-  wire u_sobel_operator_gy_n_4;
-  wire u_sobel_operator_gy_n_5;
-  wire u_sobel_operator_gy_n_6;
-  wire u_sobel_operator_gy_n_7;
-  wire u_sobel_operator_gy_n_8;
-  wire u_sobel_operator_gy_n_9;
+  wire u_sobel_operator_n_0;
+  wire u_sobel_operator_n_1;
+  wire u_sobel_operator_n_2;
+  wire u_sobel_operator_n_3;
+  wire u_sobel_operator_n_31;
+  wire u_sobel_operator_n_32;
+  wire u_sobel_operator_n_33;
+  wire u_sobel_operator_n_34;
+  wire u_sobel_operator_n_35;
+  wire u_sobel_operator_n_36;
+  wire u_sobel_operator_n_37;
+  wire u_sobel_operator_n_38;
+  wire u_sobel_operator_n_39;
+  wire u_sobel_operator_n_4;
+  wire u_sobel_operator_n_40;
+  wire u_sobel_operator_n_41;
+  wire u_sobel_operator_n_42;
+  wire u_sobel_operator_n_43;
+  wire u_sobel_operator_n_44;
+  wire u_sobel_operator_n_45;
+  wire u_sobel_operator_n_46;
+  wire u_sobel_operator_n_47;
+  wire u_sobel_operator_n_48;
+  wire u_sobel_operator_n_49;
+  wire u_sobel_operator_n_5;
+  wire u_sobel_operator_n_50;
+  wire u_sobel_operator_n_6;
+  wire u_sobel_operator_n_7;
+  wire u_sobel_operator_n_8;
+  wire u_sobel_operator_n_9;
 
   (* XILINX_LEGACY_PRIM = "BUFG" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:CE" *) 
@@ -2616,15 +2912,15 @@ module sobel_operator
         .reset_IBUF(reset_IBUF));
   shift u_shift
        (.CLK(clk_IBUF_BUFG),
-        .CO(u_sobel_operator_gx_n_8),
+        .CO(u_sobel_operator_n_8),
         .D(pxl_00_in_IBUF),
         .DI({u_shift_n_9,u_shift_n_10,u_shift_n_11,u_shift_n_12,u_shift_n_13,u_shift_n_14,pxl_00_out}),
         .E(CEP),
-        .Gx0__29_carry__0(u_sobel_operator_gx_n_9),
-        .Gy0__29_carry({u_sobel_operator_gy_n_0,u_sobel_operator_gy_n_1,u_sobel_operator_gy_n_2,u_sobel_operator_gy_n_3,u_sobel_operator_gy_n_4,u_sobel_operator_gy_n_5,u_sobel_operator_gy_n_6,u_sobel_operator_gy_n_7}),
-        .Gy0__29_carry__0(u_sobel_operator_gy_n_8),
-        .Gy0__29_carry__0_0(u_sobel_operator_gy_n_9),
-        .O({u_sobel_operator_gx_n_0,u_sobel_operator_gx_n_1,u_sobel_operator_gx_n_2,u_sobel_operator_gx_n_3,u_sobel_operator_gx_n_4,u_sobel_operator_gx_n_5,u_sobel_operator_gx_n_6,u_sobel_operator_gx_n_7}),
+        .Gx0__29_carry__0(u_sobel_operator_n_9),
+        .Gy0__29_carry({u_sobel_operator_n_31,u_sobel_operator_n_32,u_sobel_operator_n_33,u_sobel_operator_n_34,u_sobel_operator_n_35,u_sobel_operator_n_36,u_sobel_operator_n_37,u_sobel_operator_n_38}),
+        .Gy0__29_carry__0(u_sobel_operator_n_39),
+        .Gy0__29_carry__0_0(u_sobel_operator_n_40),
+        .O({u_sobel_operator_n_0,u_sobel_operator_n_1,u_sobel_operator_n_2,u_sobel_operator_n_3,u_sobel_operator_n_4,u_sobel_operator_n_5,u_sobel_operator_n_6,u_sobel_operator_n_7}),
         .PCOUT(PCOUT),
         .Q(pxl_10_out),
         .S({u_shift_n_0,u_shift_n_1,u_shift_n_2,u_shift_n_3,u_shift_n_4,u_shift_n_5,u_shift_n_6,u_shift_n_7}),
@@ -2652,18 +2948,36 @@ module sobel_operator
         .\pxl_22_out_reg[7]_3 ({u_shift_n_92,u_shift_n_93}),
         .\pxl_22_out_reg[7]_4 ({u_shift_n_94,u_shift_n_95,u_shift_n_96}),
         .\pxl_22_out_reg[7]_5 ({u_shift_n_97,u_shift_n_98}),
-        .pxl_out1({u_sobel_operator_gy_n_10,u_sobel_operator_gy_n_11,u_sobel_operator_gy_n_12,u_sobel_operator_gy_n_13,u_sobel_operator_gy_n_14,u_sobel_operator_gy_n_15,u_sobel_operator_gy_n_16}),
-        .pxl_out1_0({u_sobel_operator_gy_n_17,u_sobel_operator_gy_n_18,u_sobel_operator_gy_n_19}));
-  sobel_operator_gx u_sobel_operator_gx
-       (.CO(u_sobel_operator_gx_n_8),
+        .pxl_out1({u_sobel_operator_n_41,u_sobel_operator_n_42,u_sobel_operator_n_43,u_sobel_operator_n_44,u_sobel_operator_n_45,u_sobel_operator_n_46,u_sobel_operator_n_47}),
+        .pxl_out1_0({u_sobel_operator_n_48,u_sobel_operator_n_49,u_sobel_operator_n_50}));
+  sobel_operator u_sobel_operator
+       (.CO(u_sobel_operator_n_8),
         .DI({u_shift_n_9,u_shift_n_10,u_shift_n_11,u_shift_n_12,u_shift_n_13,u_shift_n_14,pxl_00_out}),
         .Gx0(Gx0),
         .Gx0__29_carry__0_i_5(u_shift_n_17),
-        .O({u_sobel_operator_gx_n_0,u_sobel_operator_gx_n_1,u_sobel_operator_gx_n_2,u_sobel_operator_gx_n_3,u_sobel_operator_gx_n_4,u_sobel_operator_gx_n_5,u_sobel_operator_gx_n_6,u_sobel_operator_gx_n_7}),
+        .Gy0(Gy0),
+        .Gy0__29_carry__0_i_5(pxl_01_out),
+        .Gy0__29_carry__0_i_5_0(u_shift_n_59),
+        .Gy0__29_carry_i_15({u_shift_n_53,u_shift_n_54,u_shift_n_55,u_shift_n_56,u_shift_n_57,u_shift_n_58}),
+        .Gy0__29_carry_i_15_0({u_shift_n_44,u_shift_n_45,u_shift_n_46,u_shift_n_47,u_shift_n_48,u_shift_n_49,u_shift_n_50,u_shift_n_51}),
+        .O({u_sobel_operator_n_0,u_sobel_operator_n_1,u_sobel_operator_n_2,u_sobel_operator_n_3,u_sobel_operator_n_4,u_sobel_operator_n_5,u_sobel_operator_n_6,u_sobel_operator_n_7}),
         .Q(pxl_10_out),
         .S({u_shift_n_0,u_shift_n_1,u_shift_n_2,u_shift_n_3,u_shift_n_4,u_shift_n_5,u_shift_n_6,u_shift_n_7}),
-        .\pxl_10_out_reg[7] (u_sobel_operator_gx_n_9),
+        .\pxl_00_out_reg[1] ({u_sobel_operator_n_31,u_sobel_operator_n_32,u_sobel_operator_n_33,u_sobel_operator_n_34,u_sobel_operator_n_35,u_sobel_operator_n_36,u_sobel_operator_n_37,u_sobel_operator_n_38}),
+        .\pxl_01_out_reg[7] (u_sobel_operator_n_39),
+        .\pxl_01_out_reg[7]_0 (u_sobel_operator_n_40),
+        .\pxl_10_out_reg[7] (u_sobel_operator_n_9),
+        .\pxl_20_out_reg[6] ({u_sobel_operator_n_41,u_sobel_operator_n_42,u_sobel_operator_n_43,u_sobel_operator_n_44,u_sobel_operator_n_45,u_sobel_operator_n_46,u_sobel_operator_n_47}),
         .\pxl_22_out_reg[7] (PCOUT),
+        .\pxl_22_out_reg[7]_0 ({u_sobel_operator_n_48,u_sobel_operator_n_49,u_sobel_operator_n_50}),
+        .pxl_out1({u_shift_n_68,u_shift_n_69,u_shift_n_70,u_shift_n_71,u_shift_n_72,u_shift_n_73,u_shift_n_74}),
+        .pxl_out1_0({u_shift_n_60,u_shift_n_61,u_shift_n_62,u_shift_n_63,u_shift_n_64,u_shift_n_65,u_shift_n_66,u_shift_n_67}),
+        .pxl_out1_1({u_shift_n_97,u_shift_n_98}),
+        .pxl_out1_2({u_shift_n_94,u_shift_n_95,u_shift_n_96}),
+        .pxl_out1_3(pxl_21_out),
+        .pxl_out1_4({u_shift_n_75,u_shift_n_76,u_shift_n_77,u_shift_n_78,u_shift_n_79,u_shift_n_80,u_shift_n_81}),
+        .pxl_out1_5(u_shift_n_88),
+        .pxl_out1_6({u_shift_n_83,u_shift_n_84,u_shift_n_85}),
         .pxl_out2({u_shift_n_26,u_shift_n_27,u_shift_n_28,u_shift_n_29,u_shift_n_30,u_shift_n_31,u_shift_n_32}),
         .pxl_out2_0({u_shift_n_18,u_shift_n_19,u_shift_n_20,u_shift_n_21,u_shift_n_22,u_shift_n_23,u_shift_n_24,u_shift_n_25}),
         .pxl_out2_1({u_shift_n_92,u_shift_n_93}),
@@ -2672,326 +2986,6 @@ module sobel_operator
         .pxl_out2_4({u_shift_n_33,u_shift_n_34,u_shift_n_35,u_shift_n_36,u_shift_n_37,u_shift_n_38,u_shift_n_39}),
         .pxl_out2_5(u_shift_n_87),
         .pxl_out2_6({u_shift_n_41,u_shift_n_42,u_shift_n_43}));
-  sobel_operator_gy u_sobel_operator_gy
-       (.DI({u_shift_n_53,u_shift_n_54,u_shift_n_55,u_shift_n_56,u_shift_n_57,u_shift_n_58,pxl_00_out}),
-        .Gy0(Gy0),
-        .Gy0__29_carry__0_i_5(pxl_01_out),
-        .Gy0__29_carry__0_i_5_0(u_shift_n_59),
-        .Gy0__29_carry_i_15({u_shift_n_44,u_shift_n_45,u_shift_n_46,u_shift_n_47,u_shift_n_48,u_shift_n_49,u_shift_n_50,u_shift_n_51}),
-        .\pxl_00_out_reg[1] ({u_sobel_operator_gy_n_0,u_sobel_operator_gy_n_1,u_sobel_operator_gy_n_2,u_sobel_operator_gy_n_3,u_sobel_operator_gy_n_4,u_sobel_operator_gy_n_5,u_sobel_operator_gy_n_6,u_sobel_operator_gy_n_7}),
-        .\pxl_01_out_reg[7] (u_sobel_operator_gy_n_8),
-        .\pxl_01_out_reg[7]_0 (u_sobel_operator_gy_n_9),
-        .\pxl_20_out_reg[6] ({u_sobel_operator_gy_n_10,u_sobel_operator_gy_n_11,u_sobel_operator_gy_n_12,u_sobel_operator_gy_n_13,u_sobel_operator_gy_n_14,u_sobel_operator_gy_n_15,u_sobel_operator_gy_n_16}),
-        .\pxl_22_out_reg[7] ({u_sobel_operator_gy_n_17,u_sobel_operator_gy_n_18,u_sobel_operator_gy_n_19}),
-        .pxl_out1({u_shift_n_68,u_shift_n_69,u_shift_n_70,u_shift_n_71,u_shift_n_72,u_shift_n_73,u_shift_n_74}),
-        .pxl_out1_0({u_shift_n_60,u_shift_n_61,u_shift_n_62,u_shift_n_63,u_shift_n_64,u_shift_n_65,u_shift_n_66,u_shift_n_67}),
-        .pxl_out1_1({u_shift_n_97,u_shift_n_98}),
-        .pxl_out1_2({u_shift_n_94,u_shift_n_95,u_shift_n_96}),
-        .pxl_out1_3(pxl_21_out),
-        .pxl_out1_4({u_shift_n_75,u_shift_n_76,u_shift_n_77,u_shift_n_78,u_shift_n_79,u_shift_n_80,u_shift_n_81}),
-        .pxl_out1_5(u_shift_n_88),
-        .pxl_out1_6({u_shift_n_83,u_shift_n_84,u_shift_n_85}));
-endmodule
-
-module sobel_operator_gx
-   (O,
-    CO,
-    \pxl_10_out_reg[7] ,
-    \pxl_22_out_reg[7] ,
-    Gx0,
-    DI,
-    S,
-    Q,
-    Gx0__29_carry__0_i_5,
-    pxl_out2,
-    pxl_out2_0,
-    pxl_out2_1,
-    pxl_out2_2,
-    pxl_out2_3,
-    pxl_out2_4,
-    pxl_out2_5,
-    pxl_out2_6);
-  output [7:0]O;
-  output [0:0]CO;
-  output [0:0]\pxl_10_out_reg[7] ;
-  output [9:0]\pxl_22_out_reg[7] ;
-  output [10:0]Gx0;
-  input [7:0]DI;
-  input [7:0]S;
-  input [0:0]Q;
-  input [0:0]Gx0__29_carry__0_i_5;
-  input [6:0]pxl_out2;
-  input [7:0]pxl_out2_0;
-  input [1:0]pxl_out2_1;
-  input [2:0]pxl_out2_2;
-  input [0:0]pxl_out2_3;
-  input [6:0]pxl_out2_4;
-  input [0:0]pxl_out2_5;
-  input [2:0]pxl_out2_6;
-
-  wire [0:0]CO;
-  wire [7:0]DI;
-  wire [10:0]Gx0;
-  wire Gx0__1_carry_n_0;
-  wire Gx0__1_carry_n_1;
-  wire Gx0__1_carry_n_2;
-  wire Gx0__1_carry_n_3;
-  wire Gx0__1_carry_n_4;
-  wire Gx0__1_carry_n_5;
-  wire Gx0__1_carry_n_6;
-  wire Gx0__1_carry_n_7;
-  wire [0:0]Gx0__29_carry__0_i_5;
-  wire Gx0__29_carry__0_n_6;
-  wire Gx0__29_carry__0_n_7;
-  wire Gx0__29_carry_n_0;
-  wire Gx0__29_carry_n_1;
-  wire Gx0__29_carry_n_2;
-  wire Gx0__29_carry_n_3;
-  wire Gx0__29_carry_n_4;
-  wire Gx0__29_carry_n_5;
-  wire Gx0__29_carry_n_6;
-  wire Gx0__29_carry_n_7;
-  wire Gx0__59_carry__0_n_6;
-  wire Gx0__59_carry__0_n_7;
-  wire Gx0__59_carry_n_0;
-  wire Gx0__59_carry_n_1;
-  wire Gx0__59_carry_n_2;
-  wire Gx0__59_carry_n_3;
-  wire Gx0__59_carry_n_4;
-  wire Gx0__59_carry_n_5;
-  wire Gx0__59_carry_n_6;
-  wire Gx0__59_carry_n_7;
-  wire [7:0]O;
-  wire [0:0]PCOUT;
-  wire [0:0]Q;
-  wire [7:0]S;
-  wire [0:0]\pxl_10_out_reg[7] ;
-  wire [9:0]\pxl_22_out_reg[7] ;
-  wire [6:0]pxl_out2;
-  wire [7:0]pxl_out2_0;
-  wire [1:0]pxl_out2_1;
-  wire [2:0]pxl_out2_2;
-  wire [0:0]pxl_out2_3;
-  wire [6:0]pxl_out2_4;
-  wire [0:0]pxl_out2_5;
-  wire [2:0]pxl_out2_6;
-  wire [7:0]NLW_Gx0__1_carry__0_CO_UNCONNECTED;
-  wire [7:1]NLW_Gx0__1_carry__0_O_UNCONNECTED;
-  wire [7:2]NLW_Gx0__29_carry__0_CO_UNCONNECTED;
-  wire [7:3]NLW_Gx0__29_carry__0_O_UNCONNECTED;
-  wire [7:2]NLW_Gx0__59_carry__0_CO_UNCONNECTED;
-  wire [7:3]NLW_Gx0__59_carry__0_O_UNCONNECTED;
-
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gx0__1_carry
-       (.CI(1'b0),
-        .CI_TOP(1'b0),
-        .CO({Gx0__1_carry_n_0,Gx0__1_carry_n_1,Gx0__1_carry_n_2,Gx0__1_carry_n_3,Gx0__1_carry_n_4,Gx0__1_carry_n_5,Gx0__1_carry_n_6,Gx0__1_carry_n_7}),
-        .DI(DI),
-        .O(O),
-        .S(S));
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gx0__1_carry__0
-       (.CI(Gx0__1_carry_n_0),
-        .CI_TOP(1'b0),
-        .CO({NLW_Gx0__1_carry__0_CO_UNCONNECTED[7:2],CO,NLW_Gx0__1_carry__0_CO_UNCONNECTED[0]}),
-        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,Q}),
-        .O({NLW_Gx0__1_carry__0_O_UNCONNECTED[7:1],\pxl_10_out_reg[7] }),
-        .S({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,Gx0__29_carry__0_i_5}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gx0__29_carry
-       (.CI(1'b0),
-        .CI_TOP(1'b0),
-        .CO({Gx0__29_carry_n_0,Gx0__29_carry_n_1,Gx0__29_carry_n_2,Gx0__29_carry_n_3,Gx0__29_carry_n_4,Gx0__29_carry_n_5,Gx0__29_carry_n_6,Gx0__29_carry_n_7}),
-        .DI({pxl_out2,1'b0}),
-        .O({\pxl_22_out_reg[7] [6:0],PCOUT}),
-        .S(pxl_out2_0));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gx0__29_carry__0
-       (.CI(Gx0__29_carry_n_0),
-        .CI_TOP(1'b0),
-        .CO({NLW_Gx0__29_carry__0_CO_UNCONNECTED[7:2],Gx0__29_carry__0_n_6,Gx0__29_carry__0_n_7}),
-        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out2_1}),
-        .O({NLW_Gx0__29_carry__0_O_UNCONNECTED[7:3],\pxl_22_out_reg[7] [9:7]}),
-        .S({1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out2_2}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gx0__59_carry
-       (.CI(1'b0),
-        .CI_TOP(1'b0),
-        .CO({Gx0__59_carry_n_0,Gx0__59_carry_n_1,Gx0__59_carry_n_2,Gx0__59_carry_n_3,Gx0__59_carry_n_4,Gx0__59_carry_n_5,Gx0__59_carry_n_6,Gx0__59_carry_n_7}),
-        .DI({\pxl_22_out_reg[7] [6:1],pxl_out2_3,1'b0}),
-        .O(Gx0[7:0]),
-        .S({pxl_out2_4,PCOUT}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gx0__59_carry__0
-       (.CI(Gx0__59_carry_n_0),
-        .CI_TOP(1'b0),
-        .CO({NLW_Gx0__59_carry__0_CO_UNCONNECTED[7:2],Gx0__59_carry__0_n_6,Gx0__59_carry__0_n_7}),
-        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out2_5,\pxl_22_out_reg[7] [7]}),
-        .O({NLW_Gx0__59_carry__0_O_UNCONNECTED[7:3],Gx0[10:8]}),
-        .S({1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out2_6}));
-endmodule
-
-module sobel_operator_gy
-   (\pxl_00_out_reg[1] ,
-    \pxl_01_out_reg[7] ,
-    \pxl_01_out_reg[7]_0 ,
-    \pxl_20_out_reg[6] ,
-    \pxl_22_out_reg[7] ,
-    Gy0,
-    DI,
-    Gy0__29_carry_i_15,
-    Gy0__29_carry__0_i_5,
-    Gy0__29_carry__0_i_5_0,
-    pxl_out1,
-    pxl_out1_0,
-    pxl_out1_1,
-    pxl_out1_2,
-    pxl_out1_3,
-    pxl_out1_4,
-    pxl_out1_5,
-    pxl_out1_6);
-  output [7:0]\pxl_00_out_reg[1] ;
-  output [0:0]\pxl_01_out_reg[7] ;
-  output [0:0]\pxl_01_out_reg[7]_0 ;
-  output [6:0]\pxl_20_out_reg[6] ;
-  output [2:0]\pxl_22_out_reg[7] ;
-  output [10:0]Gy0;
-  input [7:0]DI;
-  input [7:0]Gy0__29_carry_i_15;
-  input [0:0]Gy0__29_carry__0_i_5;
-  input [0:0]Gy0__29_carry__0_i_5_0;
-  input [6:0]pxl_out1;
-  input [7:0]pxl_out1_0;
-  input [1:0]pxl_out1_1;
-  input [2:0]pxl_out1_2;
-  input [0:0]pxl_out1_3;
-  input [6:0]pxl_out1_4;
-  input [0:0]pxl_out1_5;
-  input [2:0]pxl_out1_6;
-
-  wire [7:0]DI;
-  wire [10:0]Gy0;
-  wire Gy0__1_carry_n_0;
-  wire Gy0__1_carry_n_1;
-  wire Gy0__1_carry_n_2;
-  wire Gy0__1_carry_n_3;
-  wire Gy0__1_carry_n_4;
-  wire Gy0__1_carry_n_5;
-  wire Gy0__1_carry_n_6;
-  wire Gy0__1_carry_n_7;
-  wire [0:0]Gy0__29_carry__0_i_5;
-  wire [0:0]Gy0__29_carry__0_i_5_0;
-  wire Gy0__29_carry__0_n_6;
-  wire Gy0__29_carry__0_n_7;
-  wire [7:0]Gy0__29_carry_i_15;
-  wire Gy0__29_carry_n_0;
-  wire Gy0__29_carry_n_1;
-  wire Gy0__29_carry_n_15;
-  wire Gy0__29_carry_n_2;
-  wire Gy0__29_carry_n_3;
-  wire Gy0__29_carry_n_4;
-  wire Gy0__29_carry_n_5;
-  wire Gy0__29_carry_n_6;
-  wire Gy0__29_carry_n_7;
-  wire Gy0__59_carry__0_n_6;
-  wire Gy0__59_carry__0_n_7;
-  wire Gy0__59_carry_n_0;
-  wire Gy0__59_carry_n_1;
-  wire Gy0__59_carry_n_2;
-  wire Gy0__59_carry_n_3;
-  wire Gy0__59_carry_n_4;
-  wire Gy0__59_carry_n_5;
-  wire Gy0__59_carry_n_6;
-  wire Gy0__59_carry_n_7;
-  wire [7:0]\pxl_00_out_reg[1] ;
-  wire [0:0]\pxl_01_out_reg[7] ;
-  wire [0:0]\pxl_01_out_reg[7]_0 ;
-  wire [6:0]\pxl_20_out_reg[6] ;
-  wire [2:0]\pxl_22_out_reg[7] ;
-  wire [6:0]pxl_out1;
-  wire [7:0]pxl_out1_0;
-  wire [1:0]pxl_out1_1;
-  wire [2:0]pxl_out1_2;
-  wire [0:0]pxl_out1_3;
-  wire [6:0]pxl_out1_4;
-  wire [0:0]pxl_out1_5;
-  wire [2:0]pxl_out1_6;
-  wire [7:0]NLW_Gy0__1_carry__0_CO_UNCONNECTED;
-  wire [7:1]NLW_Gy0__1_carry__0_O_UNCONNECTED;
-  wire [7:2]NLW_Gy0__29_carry__0_CO_UNCONNECTED;
-  wire [7:3]NLW_Gy0__29_carry__0_O_UNCONNECTED;
-  wire [7:2]NLW_Gy0__59_carry__0_CO_UNCONNECTED;
-  wire [7:3]NLW_Gy0__59_carry__0_O_UNCONNECTED;
-
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gy0__1_carry
-       (.CI(1'b0),
-        .CI_TOP(1'b0),
-        .CO({Gy0__1_carry_n_0,Gy0__1_carry_n_1,Gy0__1_carry_n_2,Gy0__1_carry_n_3,Gy0__1_carry_n_4,Gy0__1_carry_n_5,Gy0__1_carry_n_6,Gy0__1_carry_n_7}),
-        .DI(DI),
-        .O(\pxl_00_out_reg[1] ),
-        .S(Gy0__29_carry_i_15));
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gy0__1_carry__0
-       (.CI(Gy0__1_carry_n_0),
-        .CI_TOP(1'b0),
-        .CO({NLW_Gy0__1_carry__0_CO_UNCONNECTED[7:2],\pxl_01_out_reg[7] ,NLW_Gy0__1_carry__0_CO_UNCONNECTED[0]}),
-        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,Gy0__29_carry__0_i_5}),
-        .O({NLW_Gy0__1_carry__0_O_UNCONNECTED[7:1],\pxl_01_out_reg[7]_0 }),
-        .S({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,Gy0__29_carry__0_i_5_0}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gy0__29_carry
-       (.CI(1'b0),
-        .CI_TOP(1'b0),
-        .CO({Gy0__29_carry_n_0,Gy0__29_carry_n_1,Gy0__29_carry_n_2,Gy0__29_carry_n_3,Gy0__29_carry_n_4,Gy0__29_carry_n_5,Gy0__29_carry_n_6,Gy0__29_carry_n_7}),
-        .DI({pxl_out1,1'b0}),
-        .O({\pxl_20_out_reg[6] ,Gy0__29_carry_n_15}),
-        .S(pxl_out1_0));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gy0__29_carry__0
-       (.CI(Gy0__29_carry_n_0),
-        .CI_TOP(1'b0),
-        .CO({NLW_Gy0__29_carry__0_CO_UNCONNECTED[7:2],Gy0__29_carry__0_n_6,Gy0__29_carry__0_n_7}),
-        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out1_1}),
-        .O({NLW_Gy0__29_carry__0_O_UNCONNECTED[7:3],\pxl_22_out_reg[7] }),
-        .S({1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out1_2}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gy0__59_carry
-       (.CI(1'b0),
-        .CI_TOP(1'b0),
-        .CO({Gy0__59_carry_n_0,Gy0__59_carry_n_1,Gy0__59_carry_n_2,Gy0__59_carry_n_3,Gy0__59_carry_n_4,Gy0__59_carry_n_5,Gy0__59_carry_n_6,Gy0__59_carry_n_7}),
-        .DI({\pxl_20_out_reg[6] [6:1],pxl_out1_3,1'b0}),
-        .O(Gy0[7:0]),
-        .S({pxl_out1_4,Gy0__29_carry_n_15}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 #(
-    .CARRY_TYPE("SINGLE_CY8")) 
-    Gy0__59_carry__0
-       (.CI(Gy0__59_carry_n_0),
-        .CI_TOP(1'b0),
-        .CO({NLW_Gy0__59_carry__0_CO_UNCONNECTED[7:2],Gy0__59_carry__0_n_6,Gy0__59_carry__0_n_7}),
-        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out1_5,\pxl_22_out_reg[7] [0]}),
-        .O({NLW_Gy0__59_carry__0_O_UNCONNECTED[7:3],Gy0[10:8]}),
-        .S({1'b0,1'b0,1'b0,1'b0,1'b0,pxl_out1_6}));
 endmodule
 `ifndef GLBL
 `define GLBL

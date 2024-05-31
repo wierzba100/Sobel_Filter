@@ -21,7 +21,7 @@ module sobel_operator_tb;
     logic [7:0] image_mem [IMG_WIDTH][IMG_HEIGHT] = '{default: 0};
     logic [7:0] output_image [IMG_WIDTH - 2][IMG_HEIGHT - 2] = '{default: 0};
     
-    sobel_operator u_sobel_operator (
+    top u_top (
         .clk(clk),
         .reset(reset),
         .pxl_00_in(pxl_00_in),

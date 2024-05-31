@@ -25,9 +25,8 @@ Compiling module unisims_ver.LUT1(INIT=2'b01)
 Compiling module unisims_ver.FDRE_default
 Compiling module xil_defaultlib.shift
 Compiling module unisims_ver.CARRY8
-Compiling module xil_defaultlib.sobel_operator_gx
-Compiling module xil_defaultlib.sobel_operator_gy
 Compiling module xil_defaultlib.sobel_operator
+Compiling module xil_defaultlib.top
 Compiling module xil_defaultlib.sobel_operator_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot sobel_operator_tb_func_synth
