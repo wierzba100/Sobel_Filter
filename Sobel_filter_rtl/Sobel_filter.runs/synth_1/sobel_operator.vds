@@ -2,8 +2,8 @@
 # Vivado v2022.2.2 (64-bit)
 # SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
 # IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-# Start of session at: Sun May 19 00:11:04 2024
-# Process ID: 15164
+# Start of session at: Fri May 31 03:14:56 2024
+# Process ID: 4684
 # Current directory: C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/synth_1
 # Command line: vivado.exe -log sobel_operator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sobel_operator.tcl
 # Log file: C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/synth_1/sobel_operator.vds
@@ -11,7 +11,7 @@
 # Running On: DESKTOP-TCOPK8L, OS: Windows, CPU Frequency: 2904 MHz, CPU Physical cores: 6, Host memory: 34276 MB
 #-----------------------------------------------------------
 source sobel_operator.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 396.523 ; gain = 63.516
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 396.559 ; gain = 73.773
 Command: read_checkpoint -auto_incremental -incremental C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/utils_1/imports/synth_1/sobel_operator.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/utils_1/imports/synth_1/sobel_operator.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -23,59 +23,74 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 5856
+INFO: [Synth 8-7075] Helper process launched with PID 17136
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 838.309 ; gain = 409.984
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 839.816 ; gain = 411.605
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'sobel_operator' [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/sobel_operator.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'shift' [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/shift.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'shift' (0#1) [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/shift.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'sobel_operator_gx' [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/sobel_operator_gx.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'sobel_operator_gx' (0#1) [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/sobel_operator_gx.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'sobel_operator_gy' [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/sobel_operator_gy.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'sobel_operator_gy' (0#1) [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/sobel_operator_gy.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'compute_sobel' [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/compute_sobel.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'compute_sobel' (0#1) [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/compute_sobel.sv:3]
 INFO: [Synth 8-6155] done synthesizing module 'sobel_operator' (0#1) [C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/sobel_operator.sv:3]
-WARNING: [Synth 8-7129] Port reset in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[0] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[0] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[0] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[0] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[0] in module sobel_operator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_10_in[7] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_10_in[6] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_10_in[5] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_10_in[4] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_10_in[3] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_10_in[2] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_10_in[1] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_10_in[0] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[7] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[6] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[5] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[4] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[3] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[2] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[1] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[0] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_12_in[7] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_12_in[6] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_12_in[5] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_12_in[4] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_12_in[3] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_12_in[2] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_12_in[1] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_12_in[0] in module sobel_operator_gy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_01_in[7] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_01_in[6] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_01_in[5] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_01_in[4] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_01_in[3] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_01_in[2] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_01_in[1] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_01_in[0] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[7] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[6] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[5] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[4] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[3] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[2] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[1] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[0] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_21_in[7] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_21_in[6] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_21_in[5] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_21_in[4] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_21_in[3] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_21_in[2] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_21_in[1] in module sobel_operator_gx is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_21_in[0] in module sobel_operator_gx is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 930.016 ; gain = 501.691
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 931.012 ; gain = 502.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 930.016 ; gain = 501.691
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 931.012 ; gain = 502.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -83,19 +98,20 @@ Start Loading Part and Timing Information
 Loading part: xck26-sfvc784-2LV-c
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 930.016 ; gain = 501.691
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 931.012 ; gain = 502.801
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 930.016 ; gain = 501.691
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 931.012 ; gain = 502.801
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   5 Input   11 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                8 Bit    Registers := 16    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -113,68 +129,29 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Report: Generating DSP pxl_out2, operation Mode is: A*B.
-DSP Report: operator pxl_out2 is absorbed into DSP pxl_out2.
-DSP Report: Generating DSP pxl_out1, operation Mode is: C+A*B.
-DSP Report: operator pxl_out1 is absorbed into DSP pxl_out1.
-DSP Report: operator pxl_out2 is absorbed into DSP pxl_out1.
-WARNING: [Synth 8-3917] design sobel_operator has port pxl_out[7] driven by constant 0
-WARNING: [Synth 8-3917] design sobel_operator has port pxl_out[6] driven by constant 0
-WARNING: [Synth 8-7129] Port reset in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_01_in[0] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_10_in[0] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_11_in[0] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_12_in[0] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[7] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[6] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[5] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[4] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[3] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[2] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[1] in module sobel_operator is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pxl_21_in[0] in module sobel_operator is either unconnected or has no load
+DSP Report: Generating DSP u_compute_sobel/pxl_out2, operation Mode is: A2*B2.
+DSP Report: register u_sobel_operator_gx/Gx_reg is absorbed into DSP u_compute_sobel/pxl_out2.
+DSP Report: register u_sobel_operator_gx/Gx_reg is absorbed into DSP u_compute_sobel/pxl_out2.
+DSP Report: operator u_compute_sobel/pxl_out2 is absorbed into DSP u_compute_sobel/pxl_out2.
+DSP Report: Generating DSP u_compute_sobel/pxl_out1, operation Mode is: C+A2*B2.
+DSP Report: register u_sobel_operator_gy/Gy_reg is absorbed into DSP u_compute_sobel/pxl_out1.
+DSP Report: register u_sobel_operator_gy/Gy_reg is absorbed into DSP u_compute_sobel/pxl_out1.
+DSP Report: operator u_compute_sobel/pxl_out1 is absorbed into DSP u_compute_sobel/pxl_out1.
+DSP Report: operator u_compute_sobel/pxl_out2 is absorbed into DSP u_compute_sobel/pxl_out1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name    | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|sobel_operator | A*B         | 11     | 11     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|sobel_operator | C+A*B       | 11     | 11     | 11     | -      | 11     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-+---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name       | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|sobel_operator_gx | A2*B2       | 11     | 11     | -      | -      | 22     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|sobel_operator_gy | C+A2*B2     | 11     | 11     | 13     | -      | 13     | 1    | 1    | 0    | -    | -     | 0    | 0    | 
++------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -185,13 +162,13 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -209,49 +186,49 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name    | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|sobel_operator | A*B         | 30     | 18     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|sobel_operator | C+A*B       | 30     | 18     | 48     | -      | 11     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-+---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name       | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|sobel_operator_gx | A'*B'       | 11     | 11     | -      | -      | 22     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|sobel_operator_gy | (C+A'*B')'  | 11     | 11     | 13     | -      | 13     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
++------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -264,45 +241,54 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |CARRY8  |     4|
-|2     |DSP48E2 |     2|
-|3     |LUT3    |     8|
-|4     |LUT4    |     7|
-|5     |LUT5    |    14|
-|6     |LUT6    |    12|
-|7     |IBUF    |    32|
-|8     |OBUF    |     8|
+|1     |BUFG    |     1|
+|2     |CARRY8  |    12|
+|3     |DSP48E2 |     2|
+|4     |LUT1    |     1|
+|5     |LUT2    |     4|
+|6     |LUT3    |    35|
+|7     |LUT4    |    29|
+|8     |LUT5    |    21|
+|9     |LUT6    |    24|
+|10    |FDRE    |   112|
+|11    |IBUF    |    26|
+|12    |OBUF    |     8|
 +------+--------+------+
 
 Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |    87|
-+------+---------+-------+------+
++------+----------------------+------------------+------+
+|      |Instance              |Module            |Cells |
++------+----------------------+------------------+------+
+|1     |top                   |                  |   275|
+|2     |  u_compute_sobel     |compute_sobel     |     2|
+|3     |  u_shift             |shift             |   226|
+|4     |  u_sobel_operator_gx |sobel_operator_gx |     6|
+|5     |  u_sobel_operator_gy |sobel_operator_gy |     6|
++------+----------------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 85 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1736.945 ; gain = 1308.621
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1736.945 ; gain = 1308.621
+Synthesis finished with 0 errors, 0 critical warnings and 49 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1742.027 ; gain = 1313.816
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1742.027 ; gain = 1313.816
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1736.945 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1742.027 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1787.582 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1786.344 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 34 instances were transformed.
+  A total of 29 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
   DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 2 instances
-  IBUF => IBUF (IBUFCTRL, INBUF): 32 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 26 instances
 
-Synth Design complete, checksum: 503f6aaa
+Synth Design complete, checksum: 64ab8105
 INFO: [Common 17-83] Releasing license: Synthesis
-20 Infos, 85 Warnings, 0 Critical Warnings and 0 Errors encountered.
+28 Infos, 49 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1787.582 ; gain = 1367.184
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1786.344 ; gain = 1365.898
 INFO: [Common 17-1381] The checkpoint 'C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/synth_1/sobel_operator.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file sobel_operator_utilization_synth.rpt -pb sobel_operator_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun May 19 00:11:42 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri May 31 03:15:35 2024...

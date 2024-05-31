@@ -10,35 +10,23 @@ module sobel_operator_tb;
     logic reset = 1;
 
     logic [7:0] pxl_00_in;
-    logic [7:0] pxl_01_in;
-    logic [7:0] pxl_02_in;
     logic [7:0] pxl_10_in;
-    logic [7:0] pxl_11_in;
-    logic [7:0] pxl_12_in;
     logic [7:0] pxl_20_in;
-    logic [7:0] pxl_21_in;
-    logic [7:0] pxl_22_in;
     
-
     // Outputs
     logic [7:0] pxl_out;
 
-    integer file_read, file_write, status;
+    integer file_read, file_write;
 
     logic [7:0] image_mem [IMG_WIDTH][IMG_HEIGHT] = '{default: 0};
     logic [7:0] output_image [IMG_WIDTH - 2][IMG_HEIGHT - 2] = '{default: 0};
-
+    
     sobel_operator u_sobel_operator (
+        .clk(clk),
         .reset(reset),
         .pxl_00_in(pxl_00_in),
-        .pxl_01_in(pxl_01_in),
-        .pxl_02_in(pxl_02_in),
         .pxl_10_in(pxl_10_in),
-        .pxl_11_in(pxl_11_in),
-        .pxl_12_in(pxl_12_in),
         .pxl_20_in(pxl_20_in),
-        .pxl_21_in(pxl_21_in),
-        .pxl_22_in(pxl_22_in),
         .pxl_out(pxl_out)
     );
     
@@ -77,14 +65,8 @@ module sobel_operator_tb;
             for (integer j = 1; j < IMG_HEIGHT - 1; j++)
             begin
                 pxl_00_in = image_mem[i-1][j-1];
-                pxl_01_in = image_mem[i-1][j];
-                pxl_02_in = image_mem[i-1][j+1];
                 pxl_10_in = image_mem[i][j-1];
-                pxl_11_in = image_mem[i][j];
-                pxl_12_in = image_mem[i][j+1];
                 pxl_20_in = image_mem[i+1][j-1];
-                pxl_21_in = image_mem[i+1][j];
-                pxl_22_in = image_mem[i+1][j+1];
                 #10;
                 output_image[i][j] = pxl_out;
             end

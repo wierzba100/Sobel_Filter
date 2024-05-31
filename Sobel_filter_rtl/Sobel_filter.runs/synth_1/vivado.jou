@@ -2,8 +2,8 @@
 # Vivado v2022.2.2 (64-bit)
 # SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
 # IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-# Start of session at: Sun May 19 00:11:04 2024
-# Process ID: 15164
+# Start of session at: Fri May 31 03:14:56 2024
+# Process ID: 4684
 # Current directory: C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/synth_1
 # Command line: vivado.exe -log sobel_operator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sobel_operator.tcl
 # Log file: C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/synth_1/sobel_operator.vds
