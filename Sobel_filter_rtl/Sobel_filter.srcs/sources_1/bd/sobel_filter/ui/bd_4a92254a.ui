@@ -1,0 +1,17 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.721212",
+   "Default View_TopLeft":"-898,-320",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace inst top_0 -pg 1 -lvl 4 -x 460 -y -150 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 3 -x 30 -y 140 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 3 -x 30 -y -100 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x -430 -y -180 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 1 -x -740 -y -100 -defaultsOSRD
+levelinfo -pg 1 -900 -740 -430 30 460 590
+pagesize -pg 1 -db -bbox -sgen -900 -470 590 230
+"
+}
+0

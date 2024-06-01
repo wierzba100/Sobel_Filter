@@ -47,8 +47,8 @@ def raw_to_jpg(raw_file, width, height, mode, output_file):
 
 raw_file = 'image_gray_output.raw'
 output_file = 'output.png'
-width = 638
-height = 478
+width = 640
+height = 480
 mode = 'L'  # 'L' - grayscale, 'RGB' - RGB
 raw_to_jpg(raw_file, width, height, mode, output_file)
 

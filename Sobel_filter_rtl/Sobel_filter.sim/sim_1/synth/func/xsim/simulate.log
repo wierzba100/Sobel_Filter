@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+$finish called at time : 3072050 ns : File "C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sim_1/new/sobel_operator_tb.sv" Line 93
+INFO: xsimkernel Simulation Memory Usage: 22100 KB (Peak: 22100 KB), Simulation CPU Usage: 83905 ms

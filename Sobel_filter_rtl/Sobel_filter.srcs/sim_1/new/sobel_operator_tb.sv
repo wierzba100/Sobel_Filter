@@ -19,7 +19,7 @@ module sobel_operator_tb;
     integer file_read, file_write;
 
     logic [7:0] image_mem [IMG_WIDTH][IMG_HEIGHT] = '{default: 0};
-    logic [7:0] output_image [IMG_WIDTH - 2][IMG_HEIGHT - 2] = '{default: 0};
+    logic [7:0] output_image [IMG_WIDTH][IMG_HEIGHT] = '{default: 0};
     
     top u_top (
         .clk(clk),
@@ -60,9 +60,9 @@ module sobel_operator_tb;
         #20;
         reset = 0;
         
-        for (integer i = 1; i < IMG_WIDTH - 1; i++)
+        for (integer i = 0; i < IMG_WIDTH; i++)
         begin
-            for (integer j = 1; j < IMG_HEIGHT - 1; j++)
+            for (integer j = 0; j < IMG_HEIGHT; j++)
             begin
                 pxl_00_in = image_mem[i-1][j-1];
                 pxl_10_in = image_mem[i][j-1];
@@ -80,9 +80,9 @@ module sobel_operator_tb;
             $finish;
         end
         
-        for (integer i = 0; i < IMG_WIDTH - 2; i++)
+        for (integer i = 0; i < IMG_WIDTH; i++)
         begin
-            for (integer j = 0; j < IMG_HEIGHT - 2; j++)
+            for (integer j = 0; j < IMG_HEIGHT; j++)
                 $fwrite(file_write, "%c", output_image[i][j]);
         end
         
