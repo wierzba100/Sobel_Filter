@@ -2,7 +2,7 @@ from matplotlib.image import imread
 import matplotlib.pyplot as plt
 import numpy as np
 
-image_file = 'original_image.png'
+image_file = 'Images/original_image.png'
 input_image = imread(image_file)
 
 r_img, g_img, b_img = input_image[:, :, 0], input_image[:, :, 1], input_image[:, :, 2]
@@ -44,4 +44,4 @@ plt.imshow(sobel_filtered_image, cmap=plt.get_cmap('gray'))
 
 plt.show()
 
-# plt.imsave('sobel_filtered_image.png', sobel_filtered_image, cmap=plt.get_cmap('gray'))
+# plt.imsave('Images/sobel_filtered_image.png', sobel_filtered_image, cmap=plt.get_cmap('gray'))

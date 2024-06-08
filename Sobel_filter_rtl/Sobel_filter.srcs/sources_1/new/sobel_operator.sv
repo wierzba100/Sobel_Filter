@@ -40,7 +40,10 @@ module sobel_operator(
     
     always @(posedge clk) begin
         if(reset)
+        begin
             Gx <= 0;
+            Gy <= 0;
+        end
         else
         begin
             Gx <= pxl_00_in * gx[0][0] + pxl_01_in * gx[0][1] - pxl_02_in * gx[0][2] + pxl_10_in * gx[1][0] + pxl_11_in * gx[1][1] - 

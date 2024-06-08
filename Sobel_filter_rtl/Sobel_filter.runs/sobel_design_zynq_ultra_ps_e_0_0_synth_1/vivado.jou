@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2.2 (64-bit)
+# SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
+# IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
+# Start of session at: Wed Jun  5 22:08:22 2024
+# Process ID: 11136
+# Current directory: C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/sobel_design_zynq_ultra_ps_e_0_0_synth_1
+# Command line: vivado.exe -log sobel_design_zynq_ultra_ps_e_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sobel_design_zynq_ultra_ps_e_0_0.tcl
+# Log file: C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/sobel_design_zynq_ultra_ps_e_0_0_synth_1/sobel_design_zynq_ultra_ps_e_0_0.vds
+# Journal file: C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/sobel_design_zynq_ultra_ps_e_0_0_synth_1\vivado.jou
+# Running On: DESKTOP-TCOPK8L, OS: Windows, CPU Frequency: 2904 MHz, CPU Physical cores: 6, Host memory: 34276 MB
+#-----------------------------------------------------------
+source sobel_design_zynq_ultra_ps_e_0_0.tcl -notrace

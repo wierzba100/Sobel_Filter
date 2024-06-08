@@ -1,10 +1,4 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/compute_sobel.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module compute_sobel
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/shift.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module shift
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/sobel_operator.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module sobel_operator
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/top.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sim_1/new/sobel_operator_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module sobel_operator_tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sources_1/new/rgb_to_grayscale.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rgb_to_grayscale
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs/sim_1/new/rgb_to_grayscale_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rgb_to_grayscale_tb

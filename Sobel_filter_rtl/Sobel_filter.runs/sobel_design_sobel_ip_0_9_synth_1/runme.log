@@ -1,0 +1,361 @@
+
+*** Running vivado
+    with args -log sobel_design_sobel_ip_0_9.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source sobel_design_sobel_ip_0_9.tcl
+
+
+
+****** Vivado v2022.2.2 (64-bit)
+  **** SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
+  **** IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
+    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+
+source sobel_design_sobel_ip_0_9.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 395.656 ; gain = 76.867
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_ip_1_0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/ip_repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/filip/Downloads/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.srcs'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/ip_repo/sobel_filter_ip_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.cache/ip 
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: sobel_design_sobel_ip_0_9
+Command: synth_design -top sobel_design_sobel_ip_0_9 -part xck26-sfvc784-2LV-c -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8748
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'sobel_ip_v1_0_S00_AXIS' with formal parameter declaration list [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0_S00_AXIS.v:51]
+WARNING: [Synth 8-11065] parameter 'WRITE_FIFO' becomes localparam in 'sobel_ip_v1_0_S00_AXIS' with formal parameter declaration list [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0_S00_AXIS.v:53]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'sobel_ip_v1_0_M00_AXIS' with formal parameter declaration list [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0_M00_AXIS.v:58]
+WARNING: [Synth 8-11065] parameter 'INIT_COUNTER' becomes localparam in 'sobel_ip_v1_0_M00_AXIS' with formal parameter declaration list [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0_M00_AXIS.v:60]
+WARNING: [Synth 8-11065] parameter 'SEND_STREAM' becomes localparam in 'sobel_ip_v1_0_M00_AXIS' with formal parameter declaration list [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0_M00_AXIS.v:63]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1777.781 ; gain = 333.395
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'sobel_design_sobel_ip_0_9' [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ip/sobel_design_sobel_ip_0_9/synth/sobel_design_sobel_ip_0_9.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'sobel_ip_v1_0' [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'top' [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:95]
+INFO: [Synth 8-6157] synthesizing module 'shift' [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:150]
+INFO: [Synth 8-6155] done synthesizing module 'shift' (0#1) [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:150]
+INFO: [Synth 8-6157] synthesizing module 'sobel_operator' [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:201]
+INFO: [Synth 8-6155] done synthesizing module 'sobel_operator' (0#1) [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:201]
+INFO: [Synth 8-6157] synthesizing module 'compute_sobel' [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:261]
+INFO: [Synth 8-6155] done synthesizing module 'compute_sobel' (0#1) [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:261]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:95]
+INFO: [Synth 8-6155] done synthesizing module 'sobel_ip_v1_0' (0#1) [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/e4b5/hdl/sobel_ip_v1_0.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'sobel_design_sobel_ip_0_9' (0#1) [c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ip/sobel_design_sobel_ip_0_9/synth/sobel_design_sobel_ip_0_9.sv:53]
+WARNING: [Synth 8-7129] Port pxl_11_in[7] in module sobel_operator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[6] in module sobel_operator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[5] in module sobel_operator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[4] in module sobel_operator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[3] in module sobel_operator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[2] in module sobel_operator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[1] in module sobel_operator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxl_11_in[0] in module sobel_operator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxls_in[31] in module shift is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxls_in[30] in module shift is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxls_in[29] in module shift is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxls_in[28] in module shift is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxls_in[27] in module shift is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxls_in[26] in module shift is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxls_in[25] in module shift is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pxls_in[24] in module shift is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tstrb[3] in module sobel_ip_v1_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tstrb[2] in module sobel_ip_v1_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tstrb[1] in module sobel_ip_v1_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tstrb[0] in module sobel_ip_v1_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m00_axis_aclk in module sobel_ip_v1_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m00_axis_aresetn in module sobel_ip_v1_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1874.754 ; gain = 430.367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1874.754 ; gain = 430.367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1874.754 ; gain = 430.367
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1874.754 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1946.305 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1964.199 ; gain = 17.895
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1964.199 ; gain = 519.812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xck26-sfvc784-2LV-c
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1964.199 ; gain = 519.812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1964.199 ; gain = 519.812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1964.199 ; gain = 519.812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               11 Bit    Registers := 2     
+	                8 Bit    Registers := 16    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1248 (col length:96)
+BRAMs: 288 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP inst/top_inst/u_compute_sobel/pxl_out2, operation Mode is: A2*B2.
+DSP Report: register inst/top_inst/u_sobel_operator/Gx_reg is absorbed into DSP inst/top_inst/u_compute_sobel/pxl_out2.
+DSP Report: register inst/top_inst/u_sobel_operator/Gx_reg is absorbed into DSP inst/top_inst/u_compute_sobel/pxl_out2.
+DSP Report: operator inst/top_inst/u_compute_sobel/pxl_out2 is absorbed into DSP inst/top_inst/u_compute_sobel/pxl_out2.
+DSP Report: Generating DSP inst/top_inst/u_compute_sobel/pxl_out1, operation Mode is: C+A2*B2.
+DSP Report: register inst/top_inst/u_sobel_operator/Gy_reg is absorbed into DSP inst/top_inst/u_compute_sobel/pxl_out1.
+DSP Report: register inst/top_inst/u_sobel_operator/Gy_reg is absorbed into DSP inst/top_inst/u_compute_sobel/pxl_out1.
+DSP Report: operator inst/top_inst/u_compute_sobel/pxl_out1 is absorbed into DSP inst/top_inst/u_compute_sobel/pxl_out1.
+DSP Report: operator inst/top_inst/u_compute_sobel/pxl_out2 is absorbed into DSP inst/top_inst/u_compute_sobel/pxl_out1.
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[31] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[30] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[29] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[28] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[27] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[26] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[25] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[24] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[23] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[22] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[21] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[20] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[19] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[18] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[17] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[16] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[15] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[14] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[13] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[12] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[11] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[10] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[9] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tdata[8] driven by constant 0
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tstrb[3] driven by constant 1
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tstrb[2] driven by constant 1
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tstrb[1] driven by constant 1
+INFO: [Synth 8-3917] design sobel_design_sobel_ip_0_9 has port m00_axis_tstrb[0] driven by constant 1
+WARNING: [Synth 8-7129] Port s00_axis_tdata[31] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[30] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[29] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[28] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[27] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[26] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[25] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[24] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tstrb[3] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tstrb[2] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tstrb[1] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tstrb[0] in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m00_axis_aclk in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m00_axis_aresetn in module sobel_design_sobel_ip_0_9 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1964.199 ; gain = 519.812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name    | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|sobel_operator | A2*B2       | 11     | 11     | -      | -      | 22     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|sobel_operator | C+A2*B2     | 11     | 11     | 13     | -      | 13     | 1    | 1    | 0    | -    | -     | 0    | 0    | 
++---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2470.770 ; gain = 1026.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2470.770 ; gain = 1026.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2475.633 ; gain = 1031.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2482.781 ; gain = 1038.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2482.781 ; gain = 1038.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2482.781 ; gain = 1038.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2482.781 ; gain = 1038.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2482.781 ; gain = 1038.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2482.781 ; gain = 1038.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name    | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|sobel_operator | A'*B'       | 11     | 11     | -      | -      | 22     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|sobel_operator | (C+A'*B')'  | 11     | 11     | 13     | -      | 13     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
++---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |CARRY8          |    12|
+|2     |DSP_ALU         |     2|
+|3     |DSP_A_B_DATA    |     2|
+|4     |DSP_C_DATA      |     2|
+|6     |DSP_MULTIPLIER  |     2|
+|7     |DSP_M_DATA      |     2|
+|8     |DSP_OUTPUT      |     2|
+|10    |DSP_PREADD      |     2|
+|11    |DSP_PREADD_DATA |     2|
+|12    |LUT1            |     1|
+|13    |LUT2            |     4|
+|14    |LUT3            |    35|
+|15    |LUT4            |    29|
+|16    |LUT5            |    21|
+|17    |LUT6            |    24|
+|18    |FDRE            |   112|
++------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2482.781 ; gain = 1038.395
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:41 . Memory (MB): peak = 2482.781 ; gain = 948.949
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2482.781 ; gain = 1038.395
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2494.863 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2519.695 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 2 instances
+
+Synth Design complete, checksum: 7949eef9
+INFO: [Common 17-83] Releasing license: Synthesis
+70 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 2519.695 ; gain = 2052.699
+INFO: [Common 17-1381] The checkpoint 'C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/sobel_design_sobel_ip_0_9_synth_1/sobel_design_sobel_ip_0_9.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP sobel_design_sobel_ip_0_9, cache-ID = ed9be3a7532d3d86
+INFO: [Coretcl 2-1174] Renamed 5 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.runs/sobel_design_sobel_ip_0_9_synth_1/sobel_design_sobel_ip_0_9.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file sobel_design_sobel_ip_0_9_utilization_synth.rpt -pb sobel_design_sobel_ip_0_9_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  6 02:25:42 2024...

@@ -3,9 +3,7 @@
 module top(
     input logic clk,
     input logic reset,
-    input logic [7:0] pxl_00_in,
-    input logic [7:0] pxl_10_in,
-    input logic [7:0] pxl_20_in,
+    input logic [31:0] pxls_in,
     output logic [7:0] pxl_out
     );
     
@@ -15,9 +13,7 @@ module top(
     shift u_shift (
         .clk(clk),
         .reset(reset),
-        .pxl_00_in(pxl_00_in),
-        .pxl_10_in(pxl_10_in),
-        .pxl_20_in(pxl_20_in),
+        .pxls_in(pxls_in),
         .pxl_00_out(pxl_00_out),
         .pxl_01_out(pxl_01_out),
         .pxl_02_out(pxl_02_out),

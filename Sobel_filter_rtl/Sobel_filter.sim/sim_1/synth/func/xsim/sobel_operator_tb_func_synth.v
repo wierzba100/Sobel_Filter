@@ -1,7 +1,7 @@
 // Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
-// Date        : Sat Jun  1 19:57:40 2024
+// Date        : Tue Jun  4 22:06:58 2024
 // Host        : DESKTOP-TCOPK8L running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               C:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.sim/sim_1/synth/func/xsim/sobel_operator_tb_func_synth.v
@@ -17,17 +17,14 @@ module compute_sobel
     CLK,
     reset_IBUF,
     Gx0,
-    E,
     Gy0);
   output [7:0]P;
   input CLK;
   input reset_IBUF;
   input [10:0]Gx0;
-  input [0:0]E;
   input [10:0]Gy0;
 
   wire CLK;
-  wire [0:0]E;
   wire [10:0]Gx0;
   wire [10:0]Gy0;
   wire [7:0]P;
@@ -131,11 +128,11 @@ module compute_sobel
         .CARRYINSEL({1'b0,1'b0,1'b0}),
         .CARRYOUT(NLW_pxl_out1_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
-        .CEA2(E),
+        .CEA2(1'b1),
         .CEAD(1'b0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
-        .CEB2(E),
+        .CEB2(1'b1),
         .CEC(1'b0),
         .CECARRYIN(1'b0),
         .CECTRL(1'b0),
@@ -155,10 +152,10 @@ module compute_sobel
         .PATTERNDETECT(NLW_pxl_out1_PATTERNDETECT_UNCONNECTED),
         .PCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .PCOUT(NLW_pxl_out1_PCOUT_UNCONNECTED[47:0]),
-        .RSTA(1'b0),
+        .RSTA(reset_IBUF),
         .RSTALLCARRYIN(1'b0),
         .RSTALUMODE(1'b0),
-        .RSTB(1'b0),
+        .RSTB(reset_IBUF),
         .RSTC(1'b0),
         .RSTCTRL(1'b0),
         .RSTD(1'b0),
@@ -272,7 +269,6 @@ module shift
     \pxl_21_out_reg[6]_0 ,
     \pxl_21_out_reg[0]_0 ,
     \pxl_21_out_reg[7]_0 ,
-    E,
     \pxl_12_out_reg[7]_1 ,
     \pxl_21_out_reg[7]_1 ,
     \pxl_22_out_reg[7]_2 ,
@@ -289,10 +285,8 @@ module shift
     Gx0__29_carry__0,
     Gy0__29_carry__0,
     Gy0__29_carry__0_0,
-    D,
-    CLK,
-    \pxl_20_old_reg[7]_0 ,
-    \pxl_10_old_reg[7]_0 );
+    pxls_in_IBUF,
+    CLK);
   output [7:0]S;
   output [0:0]Q;
   output [7:0]DI;
@@ -311,7 +305,6 @@ module shift
   output [6:0]\pxl_21_out_reg[6]_0 ;
   output [0:0]\pxl_21_out_reg[0]_0 ;
   output [2:0]\pxl_21_out_reg[7]_0 ;
-  output [0:0]E;
   output [0:0]\pxl_12_out_reg[7]_1 ;
   output [0:0]\pxl_21_out_reg[7]_1 ;
   output [2:0]\pxl_22_out_reg[7]_2 ;
@@ -328,16 +321,12 @@ module shift
   input [0:0]Gx0__29_carry__0;
   input [0:0]Gy0__29_carry__0;
   input [0:0]Gy0__29_carry__0_0;
-  input [7:0]D;
+  input [23:0]pxls_in_IBUF;
   input CLK;
-  input [7:0]\pxl_20_old_reg[7]_0 ;
-  input [7:0]\pxl_10_old_reg[7]_0 ;
 
   wire CLK;
   wire [0:0]CO;
-  wire [7:0]D;
   wire [7:0]DI;
-  wire [0:0]E;
   wire [0:0]Gx0__29_carry__0;
   wire Gx0__29_carry__0_i_6_n_0;
   wire Gx0__29_carry_i_16_n_0;
@@ -369,6 +358,7 @@ module shift
   wire [7:0]S;
   wire [0:0]SR;
   wire [7:0]pxl_00_old;
+  wire \pxl_00_old[7]_i_1_n_0 ;
   wire [7:2]pxl_00_out;
   wire [7:0]pxl_01_old;
   wire [6:0]pxl_01_out;
@@ -379,7 +369,6 @@ module shift
   wire [7:0]\pxl_02_out_reg[7]_0 ;
   wire [0:0]\pxl_02_out_reg[7]_1 ;
   wire [7:0]pxl_10_old;
-  wire [7:0]\pxl_10_old_reg[7]_0 ;
   wire [6:0]pxl_10_out;
   wire [0:0]\pxl_10_out_reg[6]_0 ;
   wire [7:0]pxl_11_old;
@@ -389,7 +378,6 @@ module shift
   wire [2:0]\pxl_12_out_reg[7]_0 ;
   wire [0:0]\pxl_12_out_reg[7]_1 ;
   wire [7:0]pxl_20_old;
-  wire [7:0]\pxl_20_old_reg[7]_0 ;
   wire [7:0]pxl_20_out;
   wire [6:0]\pxl_20_out_reg[6]_0 ;
   wire [7:0]pxl_21_old;
@@ -407,6 +395,7 @@ module shift
   wire [1:0]\pxl_22_out_reg[7]_5 ;
   wire [6:0]pxl_out1;
   wire [2:0]pxl_out1_0;
+  wire [23:0]pxls_in_IBUF;
 
   LUT4 #(
     .INIT(16'h17E8)) 
@@ -1384,69 +1373,69 @@ module shift
     .INIT(2'h1)) 
     \pxl_00_old[7]_i_1 
        (.I0(SR),
-        .O(E));
+        .O(\pxl_00_old[7]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_00_old_reg[0] 
        (.C(CLK),
-        .CE(E),
-        .D(D[0]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[0]),
         .Q(pxl_00_old[0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_00_old_reg[1] 
        (.C(CLK),
-        .CE(E),
-        .D(D[1]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[1]),
         .Q(pxl_00_old[1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_00_old_reg[2] 
        (.C(CLK),
-        .CE(E),
-        .D(D[2]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[2]),
         .Q(pxl_00_old[2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_00_old_reg[3] 
        (.C(CLK),
-        .CE(E),
-        .D(D[3]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[3]),
         .Q(pxl_00_old[3]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_00_old_reg[4] 
        (.C(CLK),
-        .CE(E),
-        .D(D[4]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[4]),
         .Q(pxl_00_old[4]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_00_old_reg[5] 
        (.C(CLK),
-        .CE(E),
-        .D(D[5]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[5]),
         .Q(pxl_00_old[5]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_00_old_reg[6] 
        (.C(CLK),
-        .CE(E),
-        .D(D[6]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[6]),
         .Q(pxl_00_old[6]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_00_old_reg[7] 
        (.C(CLK),
-        .CE(E),
-        .D(D[7]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[7]),
         .Q(pxl_00_old[7]),
         .R(1'b0));
   FDRE #(
@@ -1454,7 +1443,7 @@ module shift
     \pxl_00_out_reg[0] 
        (.C(CLK),
         .CE(1'b1),
-        .D(D[0]),
+        .D(pxls_in_IBUF[0]),
         .Q(DI[0]),
         .R(SR));
   FDRE #(
@@ -1462,7 +1451,7 @@ module shift
     \pxl_00_out_reg[1] 
        (.C(CLK),
         .CE(1'b1),
-        .D(D[1]),
+        .D(pxls_in_IBUF[1]),
         .Q(DI[1]),
         .R(SR));
   FDRE #(
@@ -1470,7 +1459,7 @@ module shift
     \pxl_00_out_reg[2] 
        (.C(CLK),
         .CE(1'b1),
-        .D(D[2]),
+        .D(pxls_in_IBUF[2]),
         .Q(pxl_00_out[2]),
         .R(SR));
   FDRE #(
@@ -1478,7 +1467,7 @@ module shift
     \pxl_00_out_reg[3] 
        (.C(CLK),
         .CE(1'b1),
-        .D(D[3]),
+        .D(pxls_in_IBUF[3]),
         .Q(pxl_00_out[3]),
         .R(SR));
   FDRE #(
@@ -1486,7 +1475,7 @@ module shift
     \pxl_00_out_reg[4] 
        (.C(CLK),
         .CE(1'b1),
-        .D(D[4]),
+        .D(pxls_in_IBUF[4]),
         .Q(pxl_00_out[4]),
         .R(SR));
   FDRE #(
@@ -1494,7 +1483,7 @@ module shift
     \pxl_00_out_reg[5] 
        (.C(CLK),
         .CE(1'b1),
-        .D(D[5]),
+        .D(pxls_in_IBUF[5]),
         .Q(pxl_00_out[5]),
         .R(SR));
   FDRE #(
@@ -1502,7 +1491,7 @@ module shift
     \pxl_00_out_reg[6] 
        (.C(CLK),
         .CE(1'b1),
-        .D(D[6]),
+        .D(pxls_in_IBUF[6]),
         .Q(pxl_00_out[6]),
         .R(SR));
   FDRE #(
@@ -1510,14 +1499,14 @@ module shift
     \pxl_00_out_reg[7] 
        (.C(CLK),
         .CE(1'b1),
-        .D(D[7]),
+        .D(pxls_in_IBUF[7]),
         .Q(pxl_00_out[7]),
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_01_old_reg[0] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_00_old[0]),
         .Q(pxl_01_old[0]),
         .R(1'b0));
@@ -1525,7 +1514,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_01_old_reg[1] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_00_old[1]),
         .Q(pxl_01_old[1]),
         .R(1'b0));
@@ -1533,7 +1522,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_01_old_reg[2] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_00_old[2]),
         .Q(pxl_01_old[2]),
         .R(1'b0));
@@ -1541,7 +1530,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_01_old_reg[3] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_00_old[3]),
         .Q(pxl_01_old[3]),
         .R(1'b0));
@@ -1549,7 +1538,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_01_old_reg[4] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_00_old[4]),
         .Q(pxl_01_old[4]),
         .R(1'b0));
@@ -1557,7 +1546,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_01_old_reg[5] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_00_old[5]),
         .Q(pxl_01_old[5]),
         .R(1'b0));
@@ -1565,7 +1554,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_01_old_reg[6] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_00_old[6]),
         .Q(pxl_01_old[6]),
         .R(1'b0));
@@ -1573,7 +1562,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_01_old_reg[7] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_00_old[7]),
         .Q(pxl_01_old[7]),
         .R(1'b0));
@@ -1709,64 +1698,64 @@ module shift
     .INIT(1'b0)) 
     \pxl_10_old_reg[0] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_10_old_reg[7]_0 [0]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[8]),
         .Q(pxl_10_old[0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_10_old_reg[1] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_10_old_reg[7]_0 [1]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[9]),
         .Q(pxl_10_old[1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_10_old_reg[2] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_10_old_reg[7]_0 [2]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[10]),
         .Q(pxl_10_old[2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_10_old_reg[3] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_10_old_reg[7]_0 [3]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[11]),
         .Q(pxl_10_old[3]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_10_old_reg[4] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_10_old_reg[7]_0 [4]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[12]),
         .Q(pxl_10_old[4]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_10_old_reg[5] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_10_old_reg[7]_0 [5]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[13]),
         .Q(pxl_10_old[5]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_10_old_reg[6] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_10_old_reg[7]_0 [6]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[14]),
         .Q(pxl_10_old[6]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_10_old_reg[7] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_10_old_reg[7]_0 [7]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[15]),
         .Q(pxl_10_old[7]),
         .R(1'b0));
   FDRE #(
@@ -1774,7 +1763,7 @@ module shift
     \pxl_10_out_reg[0] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_10_old_reg[7]_0 [0]),
+        .D(pxls_in_IBUF[8]),
         .Q(pxl_10_out[0]),
         .R(SR));
   FDRE #(
@@ -1782,7 +1771,7 @@ module shift
     \pxl_10_out_reg[1] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_10_old_reg[7]_0 [1]),
+        .D(pxls_in_IBUF[9]),
         .Q(pxl_10_out[1]),
         .R(SR));
   FDRE #(
@@ -1790,7 +1779,7 @@ module shift
     \pxl_10_out_reg[2] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_10_old_reg[7]_0 [2]),
+        .D(pxls_in_IBUF[10]),
         .Q(pxl_10_out[2]),
         .R(SR));
   FDRE #(
@@ -1798,7 +1787,7 @@ module shift
     \pxl_10_out_reg[3] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_10_old_reg[7]_0 [3]),
+        .D(pxls_in_IBUF[11]),
         .Q(pxl_10_out[3]),
         .R(SR));
   FDRE #(
@@ -1806,7 +1795,7 @@ module shift
     \pxl_10_out_reg[4] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_10_old_reg[7]_0 [4]),
+        .D(pxls_in_IBUF[12]),
         .Q(pxl_10_out[4]),
         .R(SR));
   FDRE #(
@@ -1814,7 +1803,7 @@ module shift
     \pxl_10_out_reg[5] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_10_old_reg[7]_0 [5]),
+        .D(pxls_in_IBUF[13]),
         .Q(pxl_10_out[5]),
         .R(SR));
   FDRE #(
@@ -1822,7 +1811,7 @@ module shift
     \pxl_10_out_reg[6] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_10_old_reg[7]_0 [6]),
+        .D(pxls_in_IBUF[14]),
         .Q(pxl_10_out[6]),
         .R(SR));
   FDRE #(
@@ -1830,14 +1819,14 @@ module shift
     \pxl_10_out_reg[7] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_10_old_reg[7]_0 [7]),
+        .D(pxls_in_IBUF[15]),
         .Q(Q),
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_11_old_reg[0] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_10_old[0]),
         .Q(pxl_11_old[0]),
         .R(1'b0));
@@ -1845,7 +1834,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_11_old_reg[1] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_10_old[1]),
         .Q(pxl_11_old[1]),
         .R(1'b0));
@@ -1853,7 +1842,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_11_old_reg[2] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_10_old[2]),
         .Q(pxl_11_old[2]),
         .R(1'b0));
@@ -1861,7 +1850,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_11_old_reg[3] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_10_old[3]),
         .Q(pxl_11_old[3]),
         .R(1'b0));
@@ -1869,7 +1858,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_11_old_reg[4] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_10_old[4]),
         .Q(pxl_11_old[4]),
         .R(1'b0));
@@ -1877,7 +1866,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_11_old_reg[5] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_10_old[5]),
         .Q(pxl_11_old[5]),
         .R(1'b0));
@@ -1885,7 +1874,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_11_old_reg[6] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_10_old[6]),
         .Q(pxl_11_old[6]),
         .R(1'b0));
@@ -1893,7 +1882,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_11_old_reg[7] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_10_old[7]),
         .Q(pxl_11_old[7]),
         .R(1'b0));
@@ -1965,64 +1954,64 @@ module shift
     .INIT(1'b0)) 
     \pxl_20_old_reg[0] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_20_old_reg[7]_0 [0]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[16]),
         .Q(pxl_20_old[0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_20_old_reg[1] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_20_old_reg[7]_0 [1]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[17]),
         .Q(pxl_20_old[1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_20_old_reg[2] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_20_old_reg[7]_0 [2]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[18]),
         .Q(pxl_20_old[2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_20_old_reg[3] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_20_old_reg[7]_0 [3]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[19]),
         .Q(pxl_20_old[3]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_20_old_reg[4] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_20_old_reg[7]_0 [4]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[20]),
         .Q(pxl_20_old[4]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_20_old_reg[5] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_20_old_reg[7]_0 [5]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[21]),
         .Q(pxl_20_old[5]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_20_old_reg[6] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_20_old_reg[7]_0 [6]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[22]),
         .Q(pxl_20_old[6]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_20_old_reg[7] 
        (.C(CLK),
-        .CE(E),
-        .D(\pxl_20_old_reg[7]_0 [7]),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
+        .D(pxls_in_IBUF[23]),
         .Q(pxl_20_old[7]),
         .R(1'b0));
   FDRE #(
@@ -2030,7 +2019,7 @@ module shift
     \pxl_20_out_reg[0] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_20_old_reg[7]_0 [0]),
+        .D(pxls_in_IBUF[16]),
         .Q(pxl_20_out[0]),
         .R(SR));
   FDRE #(
@@ -2038,7 +2027,7 @@ module shift
     \pxl_20_out_reg[1] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_20_old_reg[7]_0 [1]),
+        .D(pxls_in_IBUF[17]),
         .Q(pxl_20_out[1]),
         .R(SR));
   FDRE #(
@@ -2046,7 +2035,7 @@ module shift
     \pxl_20_out_reg[2] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_20_old_reg[7]_0 [2]),
+        .D(pxls_in_IBUF[18]),
         .Q(pxl_20_out[2]),
         .R(SR));
   FDRE #(
@@ -2054,7 +2043,7 @@ module shift
     \pxl_20_out_reg[3] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_20_old_reg[7]_0 [3]),
+        .D(pxls_in_IBUF[19]),
         .Q(pxl_20_out[3]),
         .R(SR));
   FDRE #(
@@ -2062,7 +2051,7 @@ module shift
     \pxl_20_out_reg[4] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_20_old_reg[7]_0 [4]),
+        .D(pxls_in_IBUF[20]),
         .Q(pxl_20_out[4]),
         .R(SR));
   FDRE #(
@@ -2070,7 +2059,7 @@ module shift
     \pxl_20_out_reg[5] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_20_old_reg[7]_0 [5]),
+        .D(pxls_in_IBUF[21]),
         .Q(pxl_20_out[5]),
         .R(SR));
   FDRE #(
@@ -2078,7 +2067,7 @@ module shift
     \pxl_20_out_reg[6] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_20_old_reg[7]_0 [6]),
+        .D(pxls_in_IBUF[22]),
         .Q(pxl_20_out[6]),
         .R(SR));
   FDRE #(
@@ -2086,14 +2075,14 @@ module shift
     \pxl_20_out_reg[7] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\pxl_20_old_reg[7]_0 [7]),
+        .D(pxls_in_IBUF[23]),
         .Q(pxl_20_out[7]),
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \pxl_21_old_reg[0] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_20_old[0]),
         .Q(pxl_21_old[0]),
         .R(1'b0));
@@ -2101,7 +2090,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_21_old_reg[1] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_20_old[1]),
         .Q(pxl_21_old[1]),
         .R(1'b0));
@@ -2109,7 +2098,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_21_old_reg[2] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_20_old[2]),
         .Q(pxl_21_old[2]),
         .R(1'b0));
@@ -2117,7 +2106,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_21_old_reg[3] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_20_old[3]),
         .Q(pxl_21_old[3]),
         .R(1'b0));
@@ -2125,7 +2114,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_21_old_reg[4] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_20_old[4]),
         .Q(pxl_21_old[4]),
         .R(1'b0));
@@ -2133,7 +2122,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_21_old_reg[5] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_20_old[5]),
         .Q(pxl_21_old[5]),
         .R(1'b0));
@@ -2141,7 +2130,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_21_old_reg[6] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_20_old[6]),
         .Q(pxl_21_old[6]),
         .R(1'b0));
@@ -2149,7 +2138,7 @@ module shift
     .INIT(1'b0)) 
     \pxl_21_old_reg[7] 
        (.C(CLK),
-        .CE(E),
+        .CE(\pxl_00_old[7]_i_1_n_0 ),
         .D(pxl_20_old[7]),
         .Q(pxl_21_old[7]),
         .R(1'b0));
@@ -2583,37 +2572,28 @@ endmodule
 module top
    (clk,
     reset,
-    pxl_00_in,
-    pxl_10_in,
-    pxl_20_in,
+    pxls_in,
     pxl_out);
   input clk;
   input reset;
-  input [7:0]pxl_00_in;
-  input [7:0]pxl_10_in;
-  input [7:0]pxl_20_in;
+  input [23:0]pxls_in;
   output [7:0]pxl_out;
 
-  wire CEP;
   wire [10:0]Gx0;
   wire [10:0]Gy0;
   wire [10:1]PCOUT;
   wire clk;
   wire clk_IBUF;
   wire clk_IBUF_BUFG;
-  wire [7:0]pxl_00_in;
-  wire [7:0]pxl_00_in_IBUF;
   wire [1:0]pxl_00_out;
   wire [7:7]pxl_01_out;
-  wire [7:0]pxl_10_in;
-  wire [7:0]pxl_10_in_IBUF;
   wire [7:7]pxl_10_out;
   wire [0:0]pxl_12_out;
-  wire [7:0]pxl_20_in;
-  wire [7:0]pxl_20_in_IBUF;
   wire [0:0]pxl_21_out;
   wire [7:0]pxl_out;
   wire [7:0]pxl_out_OBUF;
+  wire [23:0]pxls_in;
+  wire [23:0]pxls_in_IBUF;
   wire reset;
   wire reset_IBUF;
   wire u_shift_n_0;
@@ -2695,6 +2675,7 @@ module top
   wire u_shift_n_83;
   wire u_shift_n_84;
   wire u_shift_n_85;
+  wire u_shift_n_86;
   wire u_shift_n_87;
   wire u_shift_n_88;
   wire u_shift_n_89;
@@ -2707,7 +2688,6 @@ module top
   wire u_shift_n_95;
   wire u_shift_n_96;
   wire u_shift_n_97;
-  wire u_shift_n_98;
   wire u_sobel_operator_n_0;
   wire u_sobel_operator_n_1;
   wire u_sobel_operator_n_2;
@@ -2754,126 +2734,6 @@ module top
     clk_IBUF_inst
        (.I(clk),
         .O(clk_IBUF));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_00_in_IBUF[0]_inst 
-       (.I(pxl_00_in[0]),
-        .O(pxl_00_in_IBUF[0]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_00_in_IBUF[1]_inst 
-       (.I(pxl_00_in[1]),
-        .O(pxl_00_in_IBUF[1]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_00_in_IBUF[2]_inst 
-       (.I(pxl_00_in[2]),
-        .O(pxl_00_in_IBUF[2]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_00_in_IBUF[3]_inst 
-       (.I(pxl_00_in[3]),
-        .O(pxl_00_in_IBUF[3]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_00_in_IBUF[4]_inst 
-       (.I(pxl_00_in[4]),
-        .O(pxl_00_in_IBUF[4]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_00_in_IBUF[5]_inst 
-       (.I(pxl_00_in[5]),
-        .O(pxl_00_in_IBUF[5]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_00_in_IBUF[6]_inst 
-       (.I(pxl_00_in[6]),
-        .O(pxl_00_in_IBUF[6]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_00_in_IBUF[7]_inst 
-       (.I(pxl_00_in[7]),
-        .O(pxl_00_in_IBUF[7]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_10_in_IBUF[0]_inst 
-       (.I(pxl_10_in[0]),
-        .O(pxl_10_in_IBUF[0]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_10_in_IBUF[1]_inst 
-       (.I(pxl_10_in[1]),
-        .O(pxl_10_in_IBUF[1]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_10_in_IBUF[2]_inst 
-       (.I(pxl_10_in[2]),
-        .O(pxl_10_in_IBUF[2]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_10_in_IBUF[3]_inst 
-       (.I(pxl_10_in[3]),
-        .O(pxl_10_in_IBUF[3]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_10_in_IBUF[4]_inst 
-       (.I(pxl_10_in[4]),
-        .O(pxl_10_in_IBUF[4]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_10_in_IBUF[5]_inst 
-       (.I(pxl_10_in[5]),
-        .O(pxl_10_in_IBUF[5]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_10_in_IBUF[6]_inst 
-       (.I(pxl_10_in[6]),
-        .O(pxl_10_in_IBUF[6]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_10_in_IBUF[7]_inst 
-       (.I(pxl_10_in[7]),
-        .O(pxl_10_in_IBUF[7]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_20_in_IBUF[0]_inst 
-       (.I(pxl_20_in[0]),
-        .O(pxl_20_in_IBUF[0]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_20_in_IBUF[1]_inst 
-       (.I(pxl_20_in[1]),
-        .O(pxl_20_in_IBUF[1]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_20_in_IBUF[2]_inst 
-       (.I(pxl_20_in[2]),
-        .O(pxl_20_in_IBUF[2]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_20_in_IBUF[3]_inst 
-       (.I(pxl_20_in[3]),
-        .O(pxl_20_in_IBUF[3]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_20_in_IBUF[4]_inst 
-       (.I(pxl_20_in[4]),
-        .O(pxl_20_in_IBUF[4]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_20_in_IBUF[5]_inst 
-       (.I(pxl_20_in[5]),
-        .O(pxl_20_in_IBUF[5]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_20_in_IBUF[6]_inst 
-       (.I(pxl_20_in[6]),
-        .O(pxl_20_in_IBUF[6]));
-  IBUF #(
-    .CCIO_EN("TRUE")) 
-    \pxl_20_in_IBUF[7]_inst 
-       (.I(pxl_20_in[7]),
-        .O(pxl_20_in_IBUF[7]));
   OBUF \pxl_out_OBUF[0]_inst 
        (.I(pxl_out_OBUF[0]),
         .O(pxl_out[0]));
@@ -2900,12 +2760,131 @@ module top
         .O(pxl_out[7]));
   IBUF #(
     .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[0]_inst 
+       (.I(pxls_in[0]),
+        .O(pxls_in_IBUF[0]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[10]_inst 
+       (.I(pxls_in[10]),
+        .O(pxls_in_IBUF[10]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[11]_inst 
+       (.I(pxls_in[11]),
+        .O(pxls_in_IBUF[11]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[12]_inst 
+       (.I(pxls_in[12]),
+        .O(pxls_in_IBUF[12]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[13]_inst 
+       (.I(pxls_in[13]),
+        .O(pxls_in_IBUF[13]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[14]_inst 
+       (.I(pxls_in[14]),
+        .O(pxls_in_IBUF[14]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[15]_inst 
+       (.I(pxls_in[15]),
+        .O(pxls_in_IBUF[15]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[16]_inst 
+       (.I(pxls_in[16]),
+        .O(pxls_in_IBUF[16]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[17]_inst 
+       (.I(pxls_in[17]),
+        .O(pxls_in_IBUF[17]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[18]_inst 
+       (.I(pxls_in[18]),
+        .O(pxls_in_IBUF[18]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[19]_inst 
+       (.I(pxls_in[19]),
+        .O(pxls_in_IBUF[19]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[1]_inst 
+       (.I(pxls_in[1]),
+        .O(pxls_in_IBUF[1]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[20]_inst 
+       (.I(pxls_in[20]),
+        .O(pxls_in_IBUF[20]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[21]_inst 
+       (.I(pxls_in[21]),
+        .O(pxls_in_IBUF[21]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[22]_inst 
+       (.I(pxls_in[22]),
+        .O(pxls_in_IBUF[22]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[23]_inst 
+       (.I(pxls_in[23]),
+        .O(pxls_in_IBUF[23]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[2]_inst 
+       (.I(pxls_in[2]),
+        .O(pxls_in_IBUF[2]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[3]_inst 
+       (.I(pxls_in[3]),
+        .O(pxls_in_IBUF[3]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[4]_inst 
+       (.I(pxls_in[4]),
+        .O(pxls_in_IBUF[4]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[5]_inst 
+       (.I(pxls_in[5]),
+        .O(pxls_in_IBUF[5]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[6]_inst 
+       (.I(pxls_in[6]),
+        .O(pxls_in_IBUF[6]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[7]_inst 
+       (.I(pxls_in[7]),
+        .O(pxls_in_IBUF[7]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[8]_inst 
+       (.I(pxls_in[8]),
+        .O(pxls_in_IBUF[8]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
+    \pxls_in_IBUF[9]_inst 
+       (.I(pxls_in[9]),
+        .O(pxls_in_IBUF[9]));
+  IBUF #(
+    .CCIO_EN("TRUE")) 
     reset_IBUF_inst
        (.I(reset),
         .O(reset_IBUF));
   compute_sobel u_compute_sobel
        (.CLK(clk_IBUF_BUFG),
-        .E(CEP),
         .Gx0(Gx0),
         .Gy0(Gy0),
         .P(pxl_out_OBUF),
@@ -2913,9 +2892,7 @@ module top
   shift u_shift
        (.CLK(clk_IBUF_BUFG),
         .CO(u_sobel_operator_n_8),
-        .D(pxl_00_in_IBUF),
         .DI({u_shift_n_9,u_shift_n_10,u_shift_n_11,u_shift_n_12,u_shift_n_13,u_shift_n_14,pxl_00_out}),
-        .E(CEP),
         .Gx0__29_carry__0(u_sobel_operator_n_9),
         .Gy0__29_carry({u_sobel_operator_n_31,u_sobel_operator_n_32,u_sobel_operator_n_33,u_sobel_operator_n_34,u_sobel_operator_n_35,u_sobel_operator_n_36,u_sobel_operator_n_37,u_sobel_operator_n_38}),
         .Gy0__29_carry__0(u_sobel_operator_n_39),
@@ -2930,26 +2907,25 @@ module top
         .\pxl_02_out_reg[6]_1 ({u_shift_n_53,u_shift_n_54,u_shift_n_55,u_shift_n_56,u_shift_n_57,u_shift_n_58}),
         .\pxl_02_out_reg[7]_0 ({u_shift_n_44,u_shift_n_45,u_shift_n_46,u_shift_n_47,u_shift_n_48,u_shift_n_49,u_shift_n_50,u_shift_n_51}),
         .\pxl_02_out_reg[7]_1 (u_shift_n_59),
-        .\pxl_10_old_reg[7]_0 (pxl_10_in_IBUF),
         .\pxl_10_out_reg[6]_0 (u_shift_n_17),
         .\pxl_12_out_reg[0]_0 (pxl_12_out),
         .\pxl_12_out_reg[6]_0 ({u_shift_n_33,u_shift_n_34,u_shift_n_35,u_shift_n_36,u_shift_n_37,u_shift_n_38,u_shift_n_39}),
         .\pxl_12_out_reg[7]_0 ({u_shift_n_41,u_shift_n_42,u_shift_n_43}),
-        .\pxl_12_out_reg[7]_1 (u_shift_n_87),
-        .\pxl_20_old_reg[7]_0 (pxl_20_in_IBUF),
+        .\pxl_12_out_reg[7]_1 (u_shift_n_86),
         .\pxl_20_out_reg[6]_0 ({u_shift_n_68,u_shift_n_69,u_shift_n_70,u_shift_n_71,u_shift_n_72,u_shift_n_73,u_shift_n_74}),
         .\pxl_21_out_reg[0]_0 (pxl_21_out),
         .\pxl_21_out_reg[6]_0 ({u_shift_n_75,u_shift_n_76,u_shift_n_77,u_shift_n_78,u_shift_n_79,u_shift_n_80,u_shift_n_81}),
         .\pxl_21_out_reg[7]_0 ({u_shift_n_83,u_shift_n_84,u_shift_n_85}),
-        .\pxl_21_out_reg[7]_1 (u_shift_n_88),
+        .\pxl_21_out_reg[7]_1 (u_shift_n_87),
         .\pxl_22_out_reg[7]_0 ({u_shift_n_18,u_shift_n_19,u_shift_n_20,u_shift_n_21,u_shift_n_22,u_shift_n_23,u_shift_n_24,u_shift_n_25}),
         .\pxl_22_out_reg[7]_1 ({u_shift_n_60,u_shift_n_61,u_shift_n_62,u_shift_n_63,u_shift_n_64,u_shift_n_65,u_shift_n_66,u_shift_n_67}),
-        .\pxl_22_out_reg[7]_2 ({u_shift_n_89,u_shift_n_90,u_shift_n_91}),
-        .\pxl_22_out_reg[7]_3 ({u_shift_n_92,u_shift_n_93}),
-        .\pxl_22_out_reg[7]_4 ({u_shift_n_94,u_shift_n_95,u_shift_n_96}),
-        .\pxl_22_out_reg[7]_5 ({u_shift_n_97,u_shift_n_98}),
+        .\pxl_22_out_reg[7]_2 ({u_shift_n_88,u_shift_n_89,u_shift_n_90}),
+        .\pxl_22_out_reg[7]_3 ({u_shift_n_91,u_shift_n_92}),
+        .\pxl_22_out_reg[7]_4 ({u_shift_n_93,u_shift_n_94,u_shift_n_95}),
+        .\pxl_22_out_reg[7]_5 ({u_shift_n_96,u_shift_n_97}),
         .pxl_out1({u_sobel_operator_n_41,u_sobel_operator_n_42,u_sobel_operator_n_43,u_sobel_operator_n_44,u_sobel_operator_n_45,u_sobel_operator_n_46,u_sobel_operator_n_47}),
-        .pxl_out1_0({u_sobel_operator_n_48,u_sobel_operator_n_49,u_sobel_operator_n_50}));
+        .pxl_out1_0({u_sobel_operator_n_48,u_sobel_operator_n_49,u_sobel_operator_n_50}),
+        .pxls_in_IBUF(pxls_in_IBUF));
   sobel_operator u_sobel_operator
        (.CO(u_sobel_operator_n_8),
         .DI({u_shift_n_9,u_shift_n_10,u_shift_n_11,u_shift_n_12,u_shift_n_13,u_shift_n_14,pxl_00_out}),
@@ -2972,19 +2948,19 @@ module top
         .\pxl_22_out_reg[7]_0 ({u_sobel_operator_n_48,u_sobel_operator_n_49,u_sobel_operator_n_50}),
         .pxl_out1({u_shift_n_68,u_shift_n_69,u_shift_n_70,u_shift_n_71,u_shift_n_72,u_shift_n_73,u_shift_n_74}),
         .pxl_out1_0({u_shift_n_60,u_shift_n_61,u_shift_n_62,u_shift_n_63,u_shift_n_64,u_shift_n_65,u_shift_n_66,u_shift_n_67}),
-        .pxl_out1_1({u_shift_n_97,u_shift_n_98}),
-        .pxl_out1_2({u_shift_n_94,u_shift_n_95,u_shift_n_96}),
+        .pxl_out1_1({u_shift_n_96,u_shift_n_97}),
+        .pxl_out1_2({u_shift_n_93,u_shift_n_94,u_shift_n_95}),
         .pxl_out1_3(pxl_21_out),
         .pxl_out1_4({u_shift_n_75,u_shift_n_76,u_shift_n_77,u_shift_n_78,u_shift_n_79,u_shift_n_80,u_shift_n_81}),
-        .pxl_out1_5(u_shift_n_88),
+        .pxl_out1_5(u_shift_n_87),
         .pxl_out1_6({u_shift_n_83,u_shift_n_84,u_shift_n_85}),
         .pxl_out2({u_shift_n_26,u_shift_n_27,u_shift_n_28,u_shift_n_29,u_shift_n_30,u_shift_n_31,u_shift_n_32}),
         .pxl_out2_0({u_shift_n_18,u_shift_n_19,u_shift_n_20,u_shift_n_21,u_shift_n_22,u_shift_n_23,u_shift_n_24,u_shift_n_25}),
-        .pxl_out2_1({u_shift_n_92,u_shift_n_93}),
-        .pxl_out2_2({u_shift_n_89,u_shift_n_90,u_shift_n_91}),
+        .pxl_out2_1({u_shift_n_91,u_shift_n_92}),
+        .pxl_out2_2({u_shift_n_88,u_shift_n_89,u_shift_n_90}),
         .pxl_out2_3(pxl_12_out),
         .pxl_out2_4({u_shift_n_33,u_shift_n_34,u_shift_n_35,u_shift_n_36,u_shift_n_37,u_shift_n_38,u_shift_n_39}),
-        .pxl_out2_5(u_shift_n_87),
+        .pxl_out2_5(u_shift_n_86),
         .pxl_out2_6({u_shift_n_41,u_shift_n_42,u_shift_n_43}));
 endmodule
 `ifndef GLBL
