@@ -6,8 +6,8 @@ module rgb_to_grayscale(
     input logic [31:0] pxls_in,
     output logic [7:0] gray_out
 );
-    reg [7:0] gray_reg;
-    reg [15:0] gray_red, gray_green, gray_blue, gray_sum;
+    logic [7:0] gray_reg;
+    logic [15:0] gray_red, gray_green, gray_blue, gray_sum;
 
     always_comb begin
         gray_red = pxls_in[7:0] * 16'd76;         // 0.299 * 256 = 76.544 
@@ -20,7 +20,7 @@ module rgb_to_grayscale(
         gray_reg = gray_sum[15:8];
     end
     
-    always @(posedge clk) begin
+    always_ff @(posedge clk or posedge reset) begin
         if(reset)
             gray_out <= 0;
         else

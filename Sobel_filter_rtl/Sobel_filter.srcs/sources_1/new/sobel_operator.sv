@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module sobel_operator(
     input logic clk,
     input logic reset,
@@ -14,8 +16,8 @@ module sobel_operator(
     output logic [10:0] Gy
     );
     
-    reg [1:0] gx[2:0][2:0];
-    reg [1:0] gy[2:0][2:0];
+    logic [1:0] gx[2:0][2:0];
+    logic [1:0] gy[2:0][2:0];
     
     initial begin
         gx[0][0] = 1;
@@ -38,7 +40,7 @@ module sobel_operator(
         gy[2][2] = 1;
     end
     
-    always @(posedge clk) begin
+    always_ff @(posedge clk or posedge reset) begin
         if(reset)
         begin
             Gx <= 0;

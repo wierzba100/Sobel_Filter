@@ -16,10 +16,11 @@ module sobel_operator_tb;
 
     integer file_read, file_write;
 
-    logic [31:0] image_mem [IMG_WIDTH+2][IMG_HEIGHT+2] = '{default: 0};
+    logic [23:0] image_mem [IMG_WIDTH][IMG_HEIGHT] = '{default: 0};
     logic [7:0] output_image [IMG_WIDTH][IMG_HEIGHT] = '{default: 0};
+    logic [7:0] gamma = 100;
     
-    string file_path = "C:\\Studia_magisterksie\\Semestr_1\\Systemy_dedykowane_w_ukladach_programowalnych\\Sobel_Filter\\Images\\image_gray.raw";
+    string file_path = "C:\\Studia_magisterksie\\Semestr_1\\Systemy_dedykowane_w_ukladach_programowalnych\\Sobel_Filter\\Images\\image_color.raw";
     int k;
     logic [7:0] byte_;
     
@@ -44,11 +45,11 @@ module sobel_operator_tb;
             $finish;
         end
         
-        for (integer i = 0; i < IMG_WIDTH + 2; i++)
+        for (integer i = 0; i < IMG_WIDTH; i++)
         begin
-            for (integer j = 0; j < IMG_HEIGHT + 2; j++)
+            for (integer j = 0; j < IMG_HEIGHT; j++)
             begin
-                for (integer k = 0; k < 4; k++)
+                for (integer k = 0; k < 3; k++)
                 begin
                     if (!$feof(file_read))
                     begin
@@ -57,10 +58,8 @@ module sobel_operator_tb;
                             image_mem[i][j][7:0] = byte_;
                         else if(k == 1)
                             image_mem[i][j][15:8] = byte_;
-                        else if(k == 2)
-                            image_mem[i][j][23:16] = byte_;
                         else
-                            image_mem[i][j][31:24] = byte_;
+                            image_mem[i][j][23:16] = byte_;
                     end
                 end
             end
@@ -73,15 +72,13 @@ module sobel_operator_tb;
         #20;
         reset = 0;
         
-        k=0;
-        for (integer i = 1; i < IMG_WIDTH + 1; i++)
+        for (integer i = 0; i < IMG_WIDTH; i++)
         begin
-            for (integer j = 1; j < IMG_HEIGHT + 1; j++)
+            for (integer j = 0; j < IMG_HEIGHT; j++)
             begin
-                pxls_in = {image_mem[i][j][23:0]};
-
+                pxls_in = {gamma[7:0], image_mem[i][j][7:0], image_mem[i][j][15:8], image_mem[i][j][23:16]};
                 #10;
-                output_image[i-1][j-1] = pxl_out;
+                output_image[i][j] = pxl_out;
             end
         end
         

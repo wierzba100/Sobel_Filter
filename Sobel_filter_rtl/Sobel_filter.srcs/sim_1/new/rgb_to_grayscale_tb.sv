@@ -12,12 +12,14 @@ module rgb_to_grayscale_tb;
     logic [31:0] pxls_in;
     
     // Outputs
+    logic [7:0] pxl_out_gray;
     logic [7:0] pxl_out;
 
     integer file_read, file_write;
 
     logic [23:0] image_mem [IMG_WIDTH][IMG_HEIGHT] = '{default: 0};
     logic [7:0] output_image [IMG_WIDTH][IMG_HEIGHT] = '{default: 0};
+    logic [7:0] gamma = 100;
     
     string file_path = "C:\\Studia_magisterksie\\Semestr_1\\Systemy_dedykowane_w_ukladach_programowalnych\\Sobel_Filter\\Images\\image_color.raw";
     int k;
@@ -27,7 +29,15 @@ module rgb_to_grayscale_tb;
         .clk(clk),
         .reset(reset),
         .pxls_in(pxls_in),
-        .gray_out(pxl_out)
+        .gray_out(pxl_out_gray)
+    );
+    
+    gamma_correction u_gamma_correction (
+        .clk(clk),
+        .reset(reset),
+        .pxl_in(pxl_out_gray),
+        .gamma_value(pxls_in[31:24]),
+        .pxl_out(pxl_out)
     );
     
     // Clock generation
@@ -71,11 +81,12 @@ module rgb_to_grayscale_tb;
         #20;
         reset = 0;
         
+        #100;
         for (integer i = 0; i < IMG_WIDTH; i++)
         begin
             for (integer j = 0; j < IMG_HEIGHT; j++)
             begin
-                pxls_in = {image_mem[i][j][7:0], image_mem[i][j][15:8], image_mem[i][j][23:16]};
+                pxls_in = {gamma[7:0], image_mem[i][j][7:0], image_mem[i][j][15:8], image_mem[i][j][23:16]};
                 #10;
                 output_image[i][j] = pxl_out;
             end

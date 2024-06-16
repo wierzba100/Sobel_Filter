@@ -1,7 +1,7 @@
 //Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
-//Date        : Sat Jun  8 20:58:20 2024
+//Date        : Sat Jun 15 03:37:32 2024
 //Host        : DESKTOP-TCOPK8L running 64-bit major release  (build 9200)
 //Command     : generate_target rgb_design.bd
 //Design      : rgb_design
@@ -406,7 +406,7 @@ module m00_couplers_imp_LP8BH5
   assign m00_couplers_to_m00_couplers_WVALID = S_AXI_wvalid[0];
 endmodule
 
-(* CORE_GENERATION_INFO = "rgb_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=rgb_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=20,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_clkrst_cnt=11,da_zynq_ultra_ps_e_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "rgb_design.hwdef" *) 
+(* CORE_GENERATION_INFO = "rgb_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=rgb_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=20,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_clkrst_cnt=13,da_zynq_ultra_ps_e_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "rgb_design.hwdef" *) 
 module rgb_design
    ();
 
@@ -496,11 +496,11 @@ module rgb_design
   wire [31:0]axi_interconnect_1_M00_AXI_WDATA;
   wire axi_interconnect_1_M00_AXI_WREADY;
   wire [0:0]axi_interconnect_1_M00_AXI_WVALID;
-  wire [31:0]rgb_ip_0_M00_AXIS_TDATA;
-  wire rgb_ip_0_M00_AXIS_TLAST;
-  wire rgb_ip_0_M00_AXIS_TREADY;
-  wire rgb_ip_0_M00_AXIS_TVALID;
   wire [0:0]rst_ps8_0_99M_peripheral_aresetn;
+  wire [31:0]sobel_ip_0_M00_AXIS_TDATA;
+  wire sobel_ip_0_M00_AXIS_TLAST;
+  wire sobel_ip_0_M00_AXIS_TREADY;
+  wire sobel_ip_0_M00_AXIS_TVALID;
   wire [39:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR;
   wire [1:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST;
   wire [3:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARCACHE;
@@ -632,11 +632,11 @@ module rgb_design
         .s_axi_lite_wdata(axi_interconnect_1_M00_AXI_WDATA),
         .s_axi_lite_wready(axi_interconnect_1_M00_AXI_WREADY),
         .s_axi_lite_wvalid(axi_interconnect_1_M00_AXI_WVALID),
-        .s_axis_s2mm_tdata(rgb_ip_0_M00_AXIS_TDATA),
+        .s_axis_s2mm_tdata(sobel_ip_0_M00_AXIS_TDATA),
         .s_axis_s2mm_tkeep({1'b1,1'b1,1'b1,1'b1}),
-        .s_axis_s2mm_tlast(rgb_ip_0_M00_AXIS_TLAST),
-        .s_axis_s2mm_tready(rgb_ip_0_M00_AXIS_TREADY),
-        .s_axis_s2mm_tvalid(rgb_ip_0_M00_AXIS_TVALID));
+        .s_axis_s2mm_tlast(sobel_ip_0_M00_AXIS_TLAST),
+        .s_axis_s2mm_tready(sobel_ip_0_M00_AXIS_TREADY),
+        .s_axis_s2mm_tvalid(sobel_ip_0_M00_AXIS_TVALID));
   rgb_design_axi_interconnect_0_0 axi_interconnect_0
        (.ACLK(zynq_ultra_ps_e_0_pl_clk0),
         .ARESETN(rst_ps8_0_99M_peripheral_aresetn),
@@ -811,20 +811,6 @@ module rgb_design
         .S01_AXI_wready(zynq_ultra_ps_e_0_M_AXI_HPM1_FPD_WREADY),
         .S01_AXI_wstrb(zynq_ultra_ps_e_0_M_AXI_HPM1_FPD_WSTRB),
         .S01_AXI_wvalid(zynq_ultra_ps_e_0_M_AXI_HPM1_FPD_WVALID));
-  rgb_design_rgb_ip_0_1 rgb_ip_0
-       (.m00_axis_aclk(zynq_ultra_ps_e_0_pl_clk0),
-        .m00_axis_aresetn(rst_ps8_0_99M_peripheral_aresetn),
-        .m00_axis_tdata(rgb_ip_0_M00_AXIS_TDATA),
-        .m00_axis_tlast(rgb_ip_0_M00_AXIS_TLAST),
-        .m00_axis_tready(rgb_ip_0_M00_AXIS_TREADY),
-        .m00_axis_tvalid(rgb_ip_0_M00_AXIS_TVALID),
-        .s00_axis_aclk(zynq_ultra_ps_e_0_pl_clk0),
-        .s00_axis_aresetn(rst_ps8_0_99M_peripheral_aresetn),
-        .s00_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
-        .s00_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
-        .s00_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
-        .s00_axis_tstrb({1'b1,1'b1,1'b1,1'b1}),
-        .s00_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID));
   rgb_design_rst_ps8_0_99M_0 rst_ps8_0_99M
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -832,6 +818,20 @@ module rgb_design
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_ps8_0_99M_peripheral_aresetn),
         .slowest_sync_clk(zynq_ultra_ps_e_0_pl_clk0));
+  rgb_design_sobel_ip_0_0 sobel_ip_0
+       (.m00_axis_aclk(zynq_ultra_ps_e_0_pl_clk0),
+        .m00_axis_aresetn(rst_ps8_0_99M_peripheral_aresetn),
+        .m00_axis_tdata(sobel_ip_0_M00_AXIS_TDATA),
+        .m00_axis_tlast(sobel_ip_0_M00_AXIS_TLAST),
+        .m00_axis_tready(sobel_ip_0_M00_AXIS_TREADY),
+        .m00_axis_tvalid(sobel_ip_0_M00_AXIS_TVALID),
+        .s00_axis_aclk(zynq_ultra_ps_e_0_pl_clk0),
+        .s00_axis_aresetn(rst_ps8_0_99M_peripheral_aresetn),
+        .s00_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
+        .s00_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
+        .s00_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
+        .s00_axis_tstrb({1'b1,1'b1,1'b1,1'b1}),
+        .s00_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID));
   rgb_design_zynq_ultra_ps_e_0_0 zynq_ultra_ps_e_0
        (.maxigp0_araddr(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR),
         .maxigp0_arburst(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST),

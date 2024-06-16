@@ -1,9 +1,9 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../../Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/ec67/hdl" --include "../../../../../Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/abef/hdl" --include "C:/Xilinx/Vivado/2022.2/data/xilinx_vip/include" \
-"rgb_to_grayscale_tb_func_synth.v" \
+verilog xil_defaultlib  --include "../../../../../Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/ec67/hdl" --include "../../../../../Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/abef/hdl" --include "../../../../../Sobel_filter.gen/sources_1/bd/rgb_design/ipshared/ec67/hdl" --include "../../../../../Sobel_filter.gen/sources_1/bd/rgb_design/ipshared/abef/hdl" --include "C:/Xilinx/Vivado/2022.2/data/xilinx_vip/include" \
+"sobel_operator_tb_func_synth.v" \
 
-sv xil_defaultlib  --include "../../../../../Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/ec67/hdl" --include "../../../../../Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/abef/hdl" --include "C:/Xilinx/Vivado/2022.2/data/xilinx_vip/include" \
-"../../../../../Sobel_filter.srcs/sim_1/new/rgb_to_grayscale_tb.sv" \
+sv xil_defaultlib  --include "../../../../../Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/ec67/hdl" --include "../../../../../Sobel_filter.gen/sources_1/bd/sobel_design/ipshared/abef/hdl" --include "../../../../../Sobel_filter.gen/sources_1/bd/rgb_design/ipshared/ec67/hdl" --include "../../../../../Sobel_filter.gen/sources_1/bd/rgb_design/ipshared/abef/hdl" --include "C:/Xilinx/Vivado/2022.2/data/xilinx_vip/include" \
+"../../../../../Sobel_filter.srcs/sim_1/new/sobel_operator_tb.sv" \
 
 # Do not sort compile order
 nosort

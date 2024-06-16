@@ -1,11 +1,11 @@
 // Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
-// Date        : Wed Jun  5 02:51:33 2024
+// Date        : Sun Jun 16 04:49:13 2024
 // Host        : DESKTOP-TCOPK8L running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top sobel_design_rst_ps8_0_99M_0 -prefix
-//               sobel_design_rst_ps8_0_99M_0_ top_design_rst_ps8_0_99M_0_sim_netlist.v
-// Design      : top_design_rst_ps8_0_99M_0
+//               sobel_design_rst_ps8_0_99M_0_ sobel_design_rst_ps8_0_99M_0_sim_netlist.v
+// Design      : sobel_design_rst_ps8_0_99M_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xck26-sfvc784-2LV-c
@@ -717,7 +717,7 @@ module sobel_design_rst_ps8_0_99M_0_sequence_psr
         .R(lpf_int));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "top_design_rst_ps8_0_99M_0,proc_sys_reset,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "proc_sys_reset,Vivado 2022.2.2" *) 
+(* CHECK_LICENSE_TYPE = "sobel_design_rst_ps8_0_99M_0,proc_sys_reset,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "proc_sys_reset,Vivado 2022.2.2" *) 
 (* NotValidForBitStream *)
 module sobel_design_rst_ps8_0_99M_0
    (slowest_sync_clk,
@@ -730,7 +730,7 @@ module sobel_design_rst_ps8_0_99M_0
     peripheral_reset,
     interconnect_aresetn,
     peripheral_aresetn);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_design_zynq_ultra_ps_e_0_0_pl_clk0, INSERT_VIP 0" *) input slowest_sync_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 49999500, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN sobel_design_zynq_ultra_ps_e_0_0_pl_clk0, INSERT_VIP 0" *) input slowest_sync_clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 ext_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME ext_reset, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input ext_reset_in;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 aux_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME aux_reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aux_reset_in;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 dbg_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME dbg_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input mb_debug_sys_rst;

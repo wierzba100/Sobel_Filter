@@ -1,11 +1,11 @@
 // Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
-// Date        : Wed Jun  5 02:47:39 2024
+// Date        : Sun Jun 16 04:50:35 2024
 // Host        : DESKTOP-TCOPK8L running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top sobel_design_auto_ds_0 -prefix
-//               sobel_design_auto_ds_0_ top_design_auto_ds_0_stub.v
-// Design      : top_design_auto_ds_0
+//               sobel_design_auto_ds_0_ sobel_design_auto_ds_0_stub.v
+// Design      : sobel_design_auto_ds_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xck26-sfvc784-2LV-c
 // --------------------------------------------------------------------------------

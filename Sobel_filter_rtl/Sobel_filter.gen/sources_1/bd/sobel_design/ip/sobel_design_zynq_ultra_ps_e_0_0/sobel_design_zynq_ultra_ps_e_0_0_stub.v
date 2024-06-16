@@ -1,10 +1,10 @@
 // Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
-// Date        : Wed Jun  5 22:09:44 2024
+// Date        : Sun Jun 16 04:47:51 2024
 // Host        : DESKTOP-TCOPK8L running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ip/sobel_design_zynq_ultra_ps_e_0_0/sobel_design_zynq_ultra_ps_e_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top sobel_design_zynq_ultra_ps_e_0_0 -prefix
+//               sobel_design_zynq_ultra_ps_e_0_0_ sobel_design_zynq_ultra_ps_e_0_0_stub.v
 // Design      : sobel_design_zynq_ultra_ps_e_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xck26-sfvc784-2LV-c

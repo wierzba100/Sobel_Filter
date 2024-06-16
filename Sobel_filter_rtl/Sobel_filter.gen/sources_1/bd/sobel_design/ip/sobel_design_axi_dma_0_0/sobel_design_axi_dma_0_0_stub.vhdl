@@ -1,10 +1,10 @@
 -- Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
--- Date        : Wed Jun  5 23:01:40 2024
+-- Date        : Sun Jun 16 04:48:35 2024
 -- Host        : DESKTOP-TCOPK8L running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Studia_magisterksie/Semestr_1/Systemy_dedykowane_w_ukladach_programowalnych/Sobel_Filter/Sobel_filter_rtl/Sobel_filter.gen/sources_1/bd/sobel_design/ip/sobel_design_axi_dma_0_0/sobel_design_axi_dma_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top sobel_design_axi_dma_0_0 -prefix
+--               sobel_design_axi_dma_0_0_ sobel_design_axi_dma_0_0_stub.vhdl
 -- Design      : sobel_design_axi_dma_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xck26-sfvc784-2LV-c

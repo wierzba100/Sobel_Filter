@@ -13,16 +13,9 @@ def convert_png_to_raw(jpg_path, raw_color_path, raw_gray_path):
     raw_color_data = img_array.flatten()
 
     img_gray = img.convert('L')
-    img_gray_array = np.array(img_gray)
-    padded_img_gray_array = np.pad(img_gray_array, pad_width=1, mode='constant', constant_values=0)
+    img_gray_array = np.array(img_gray)   
     
-    new_gray_array = np.zeros((IMAGE_HEIGHT+2, IMAGE_WIDTH+2), dtype=np.uint32)
-    
-    for j in range(IMAGE_HEIGHT):
-        for i in range(IMAGE_WIDTH):
-            new_gray_array[j, i] = padded_img_gray_array[j, i] + (padded_img_gray_array[j+1, i] << 8) + (padded_img_gray_array[j+2, i] << 16)
-    
-    raw_gray_data = new_gray_array.flatten()
+    raw_gray_data = img_gray_array.flatten()
     
     with open(raw_color_path, 'wb') as raw_color_file:
         raw_color_data.tofile(raw_color_file)
@@ -54,7 +47,8 @@ def raw_to_jpg(raw_file, width, height, mode, output_file):
 #convert_png_to_raw('Images/original_image.png', 'Images/image_color.raw', 'Images/image_gray.raw')
 #print(read_raw_file('Images/image_color.raw'))
 
-raw_file = 'Images/image_gray_output.raw'
+#raw_file = 'Images/image_gray_output.raw'
+raw_file = 'Images/image_sobel_output.raw'
 output_file = 'Images/output.png'
 mode = 'L'  # 'L' - grayscale, 'RGB' - RGB
 raw_to_jpg(raw_file, IMAGE_WIDTH, IMAGE_HEIGHT, mode, output_file)

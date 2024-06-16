@@ -1,8 +1,8 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_Layers":"/rst_ps8_0_99M_peripheral_aresetn:true|/zynq_ultra_ps_e_0_pl_clk0:true|/zynq_ultra_ps_e_0_pl_resetn0:true|",
-   "Default View_ScaleFactor":"0.541353",
-   "Default View_TopLeft":"-174,-224",
+   "Default View_ScaleFactor":"0.946854",
+   "Default View_TopLeft":"-140,-150",
    "Display-PortTypeClock":"true",
    "Display-PortTypeReset":"true",
    "ExpandedHierarchyInLayout":"",
@@ -12,26 +12,26 @@
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
 preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 3 -x 1270 -y 140 -defaultsOSRD
-preplace inst axi_dma_0 -pg 1 -lvl 1 -x 90 -y 60 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 1 -x 90 -y -30 -defaultsOSRD
 preplace inst axi_interconnect_0 -pg 1 -lvl 4 -x 1770 -y 160 -defaultsOSRD
 preplace inst axi_interconnect_1 -pg 1 -lvl 2 -x 810 -y 100 -defaultsOSRD
 preplace inst rst_ps8_0_99M -pg 1 -lvl 4 -x 1770 -y 360 -defaultsOSRD
-preplace inst sobel_ip_0 -pg 1 -lvl 1 -x 90 -y 280 -defaultsOSRD
-preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 0 5 -80 180 290 -60 NJ -60 1570 40 1940
-preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 4 -110 -80 280 -50 960 230 1580
-preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 3 1 1560 130n
-preplace netloc S00_AXI_1 1 1 1 300 0n
-preplace netloc S00_AXI_2 1 3 1 1560 100n
-preplace netloc S01_AXI_1 1 1 1 270 20n
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 0 2 -90 -70 260
-preplace netloc axi_interconnect_0_M00_AXI 1 0 5 -100 -90 N -90 N -90 N -90 1950
-preplace netloc axi_interconnect_1_M00_AXI 1 2 1 950 100n
-preplace netloc sobel_ip_0_M00_AXIS 1 0 2 -80 -60 250
-levelinfo -pg 1 -130 90 810 1270 1770 1970
-pagesize -pg 1 -db -bbox -sgen -130 -430 1970 910
+preplace inst sobel_ip_0 -pg 1 -lvl 1 -x 90 -y 230 -defaultsOSRD
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 0 5 -110 110 280 -70 NJ -70 1580 40 1940
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 4 -120 130 310 -60 970 230 1590
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 3 1 1570 130n
+preplace netloc S00_AXI_1 1 1 1 300 -90n
+preplace netloc S00_AXI_2 1 3 1 1570 100n
+preplace netloc S01_AXI_1 1 1 1 270 -70n
+preplace netloc axi_interconnect_0_M00_AXI 1 0 5 -100 90 290 -50 N -50 N -50 1950
+preplace netloc axi_interconnect_1_M00_AXI 1 2 1 960 100n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 0 2 -80 100 260
+preplace netloc sobel_ip_0_M00_AXIS 1 0 2 -90 120 260
+levelinfo -pg 1 -140 90 810 1270 1770 1970
+pagesize -pg 1 -db -bbox -sgen -140 -430 1970 910
 "
 }
 {
-   "da_clkrst_cnt":"23",
+   "da_clkrst_cnt":"65",
    "da_zynq_ultra_ps_e_cnt":"1"
 }

@@ -7,8 +7,7 @@
       "name": "rgb_design",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2022.2.2",
-      "validated": "true"
+      "tool_version": "2022.2.2"
     },
     "design_tree": {
       "zynq_ultra_ps_e_0": "",
@@ -2311,8 +2310,8 @@
       },
       "rgb_ip_0": {
         "vlnv": "xilinx.com:user:rgb_ip:1.0",
-        "xci_name": "rgb_design_rgb_ip_0_1",
-        "xci_path": "ip\\rgb_design_rgb_ip_0_1\\rgb_design_rgb_ip_0_1.xci",
+        "xci_name": "rgb_design_rgb_ip_0_0",
+        "xci_path": "ip\\rgb_design_rgb_ip_0_0\\rgb_design_rgb_ip_0_0.xci",
         "inst_hier_path": "rgb_ip_0"
       }
     },

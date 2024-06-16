@@ -3,8 +3,8 @@
 module compute_sobel(
     input logic clk,
     input logic reset,
-    input logic [10:0] Gx,
-    input logic [10:0] Gy,
+    input logic signed [10:0] Gx,
+    input logic signed [10:0] Gy,
     output logic [7:0] pxl_out
     );
     
@@ -15,7 +15,7 @@ module compute_sobel(
         gradient = (Gx * Gx + Gy * Gy) >> 2;
     end
     
-    always @(posedge clk) begin
+    always_ff @(posedge clk or posedge reset) begin
         if(reset)
             pxl_out <= 0;
         else

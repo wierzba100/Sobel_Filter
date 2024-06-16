@@ -8,12 +8,37 @@ module top(
     );
     
     logic signed [10:0] Gx, Gy;
-    logic signed [7:0] pxl_00_out, pxl_01_out, pxl_02_out, pxl_10_out, pxl_11_out, pxl_12_out, pxl_20_out, pxl_21_out, pxl_22_out;
+    logic signed [7:0] pxl_out_gray, pxl_out_gray_normalize, pxl_00_out, pxl_01_out, pxl_02_out, 
+                       pxl_10_out, pxl_11_out, pxl_12_out, pxl_20_out, pxl_21_out, pxl_22_out;
+    logic [23:0] pxls_to_sobel;
+    
+    rgb_to_grayscale u_rgb_to_grayscale (
+        .clk(clk),
+        .reset(reset),
+        .pxls_in(pxls_in),
+        .gray_out(pxl_out_gray)
+    );
+    
+    gamma_correction u_gamma_correction (
+        .clk(clk),
+        .reset(reset),
+        .pxl_in(pxl_out_gray),
+        .gamma_value(pxls_in[31:24]),
+        .pxl_out(pxl_out_gray_normalize)
+    );
+    
+        
+    ram u_ram (
+        .clk(clk),
+        .reset(reset),
+        .din(pxl_out_gray_normalize),
+        .dout(pxls_to_sobel)
+    );
     
     shift u_shift (
         .clk(clk),
         .reset(reset),
-        .pxls_in(pxls_in),
+        .pxls_in(pxls_to_sobel),
         .pxl_00_out(pxl_00_out),
         .pxl_01_out(pxl_01_out),
         .pxl_02_out(pxl_02_out),
